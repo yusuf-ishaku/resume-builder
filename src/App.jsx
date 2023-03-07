@@ -32,15 +32,16 @@ function App() {
             <span className="block font-m text-6xl font-bold uppercase">{lname}</span>
             <span className="block mt-1 uppercase text-xs text-gray-700">{title}</span>
           </div>
-          <div className="flex w-full flex-row justify-between gap-2">
-            <div className="row1 w-1/2 p-2 mt-3">
-              <span className="block text-xl h-fit text-semibold border-gray-900">
+          <div className="flex w-full mt-6 flex-row justify-between gap-2 font-m">
+            <div className="row1 w-1/2 p-2">
+              <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 font-bold border-2 border-gray-300">
                 EDUCATION
               </span>
+              <p className="text-md text-gray-600 font-m">g</p>
             </div>
-            <div className="row1 w-1/2 p-2 mt-3">
-              <span className="block text-xl h-fit text-semibold border-gray-900">
-                EDUCATION
+            <div className="row1 w-1/2 p-2">
+              <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 border-2 font-bold border-gray-300">
+                Profile
               </span>
             </div>
           </div>
