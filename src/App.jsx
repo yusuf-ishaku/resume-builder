@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg';
 import { RxCaretDown } from "react-icons/rx";
 import { RxCaretUp } from "react-icons/rx";
 import './App.css'
+import { EducationBar } from './components/educationbar';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
   const [degree, setDegree] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
+
   let creater = () =>{
     if(eduinputHide === true){
       setEduInputHide(false);
@@ -25,6 +27,11 @@ function App() {
       setHidden(true);
     }
   }
+  let addNew = () =>{
+    if(school==="" || degree==="" || endTime==="" || startTime===""){
+       alert('missing input');
+    }
+  }
 
 
   return (
@@ -32,7 +39,8 @@ function App() {
       <div className="w-full h-full  flex">
         <div className="w-1/2 h-fit p-6 flex flex-col">
           <input type="text" placeholder='First Name' className="grow h-10 my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" onChange={(e)=>{
-            setFname(e.target.value)
+            setFname(e.target.value);
+           
           }} required/>
           <input type="text" placeholder="Last Name" className="grow my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" onChange={(e) =>{
             setLname(e.target.value)
@@ -49,17 +57,20 @@ function App() {
               Add Education
             </h3>
             <input type="text" onChange={(e) =>{
-              setSchool(e.target.value)
+              setSchool(e.target.value);
+              setSchoolCount(...{school, degree, startTime, endTime} )
             }} placeholder='Name of School' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
             <input type="text" onChange={(e) =>{
               setDegree(e.target.value);
+              setSchoolCount([...{school, degree, startTime, endTime}] )
               console.log(startTime)
             }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
             <div className="flex w-full gap-8">
               <div className="">
                 <label htmlFor="startdate">Start Date</label>
                 <input type="date" onChange={(e) =>{
-                  setStartTime(e.target.value)
+                  setStartTime(e.target.value);
+                  setSchoolCount([...{school, degree, startTime, endTime}] )
                   console.log(endTime)
                 }} placeholder='Degree' className="w-full p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
               </div>
@@ -72,7 +83,7 @@ function App() {
               </div>
             </div>
             <div className="w-full flex justify-end">
-                <button className="w-fit bg-red-800 p-2 px-5 rounded-md border-2 border-red-800 text-white hover:bg-white hover:text-red-800">
+                <button onClick={addNew} className="w-fit bg-red-800 p-2 px-5 rounded-md border-2 border-red-800 text-white hover:bg-white hover:text-red-800">
                   Add
                 </button>
               </div>
@@ -89,15 +100,7 @@ function App() {
               <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 font-bold border-2 border-gray-300">
                 EDUCATION
               </span>
-              <span className="block text-xl font-semibold mt-3 text-gray-900 font-m">
-                {degree}
-              </span>
-              <span className="block text-xl text-medium text-gray-900 font-m">
-                {school}
-              </span>
-              <span className="block my-1 text-sm text-medium">
-                <span className="inline">{startTime} - {endTime}</span>
-              </span>
+              
             </div>
             <div className="row1 w-1/2 p-2">
               <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 border-2 font-bold border-gray-300">
