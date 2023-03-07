@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer utilities{
+  *{
+    font-family: 'Montserrat', sans-serif;
+  }
   .font-m{
     font-family: 'Montserrat', sans-serif;
   }

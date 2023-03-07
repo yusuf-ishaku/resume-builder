@@ -1,5 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import reactLogo from './assets/react.svg';
+import { RxCaretDown } from "react-icons/rx";
+import { RxCaretUp } from "react-icons/rx";
 import './App.css'
 
 
@@ -7,9 +9,21 @@ function App() {
   const[fname, setFname] = useState("First Name");
   const [lname, setLname] = useState("Last Name");
   const[title, setTitle] = useState("Professional Title");
-
+  const [hidden, setHidden] = useState(false);
+  const [eduinputHide, setEduInputHide] = useState(false);
+  const [schoolCount, setSchoolCount] = useState([]);
+  const [school, setSchool] = useState("");
+  const [degree, setDegree] = useState("");
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
   let creater = () =>{
-    let body = document
+    if(eduinputHide === true){
+      setEduInputHide(false);
+      setHidden(false);
+    }else{
+      setEduInputHide(true);
+      setHidden(true);
+    }
   }
 
 
@@ -27,9 +41,29 @@ function App() {
             setTitle(e.target.value)
 
           }} placeholder='e.g. example@example.com' className="grow my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" required/>
-          <button className="w-fit border-gray-800 hover:text-red-800 hover:bg-white rounded-md text-white border-2 px-2 p-1 bg-red-800" onClick={creater}>
-            Add Education
+          <button className="w-fit flex items-center border-gray-800 hover:text-red-800 hover:bg-white rounded-md text-white border-2 px-2 p-1 bg-red-800" onClick={creater}>
+            Add Education <span className={hidden ? "hidden" : "inline"}><RxCaretDown></RxCaretDown></span><span className={hidden ? "block": "hidden"}><RxCaretUp></RxCaretUp></span>
           </button>
+          <div className= {eduinputHide? 'eduinput  w-full p-3 h-fit border-red-800 border-2 rounded-md mt-1': "hidden"}>
+            <h3 className="text-md-text-gray-800">
+              Add Education
+            </h3>
+            <input type="text" onChange={(e) =>{
+              setSchool(e.target.value)
+            }} placeholder='Name of School' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+            <input type="text" onChange={(e) =>{
+              setDegree(e.target.value)
+            }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+            <div className="flex w-full gap-8">
+              <label htmlFor="startdate"></label>
+              <input type="date" onChange={(e) =>{
+                setDegree(e.target.value)
+              }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+                <input type="date" onChange={(e) =>{
+                setDegree(e.target.value)
+              }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+            </div>
+          </div>
         </div>
         <div className="w-1/2 p-4 h-[100vh] flex flex-col items-center border-2">
           <div className="min-w-[50%] max-w-[90%] min-h-32 p-4 text-center border-gray-400 border-2 max-h-40">
@@ -43,7 +77,7 @@ function App() {
                 EDUCATION
               </span>
               <span className="text-md text-gray-900 font-m">
-                
+                {school}
               </span>
             </div>
             <div className="row1 w-1/2 p-2">
