@@ -52,27 +52,36 @@ function App() {
               setSchool(e.target.value)
             }} placeholder='Name of School' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
             <input type="text" onChange={(e) =>{
-              setDegree(e.target.value)
+              setDegree(e.target.value);
+              console.log(startTime)
             }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
             <div className="flex w-full gap-8">
               <div className="">
                 <label htmlFor="startdate">Start Date</label>
                 <input type="date" onChange={(e) =>{
-                  setDegree(e.target.value)
+                  setStartTime(e.target.value)
+                  console.log(endTime)
                 }} placeholder='Degree' className="w-full p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
               </div>
-              
-             
+              <div className="">
+                <label htmlFor="startdate">End Date</label>
                 <input type="date" onChange={(e) =>{
-                setDegree(e.target.value)
-              }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+                setEndTime(e.target.value);
+                console.log(degree)
+                }} placeholder='Degree' className="w-full p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+              </div>
             </div>
+            <div className="w-full flex justify-end">
+                <button className="w-fit bg-red-800 p-2 px-5 rounded-md border-2 border-red-800 text-white hover:bg-white hover:text-red-800">
+                  Add
+                </button>
+              </div>
           </div>
         </div>
         <div className="w-1/2 p-4 h-[100vh] flex flex-col items-center border-2">
           <div className="min-w-[50%] max-w-[90%] min-h-32 p-4 text-center border-gray-400 border-2 max-h-40">
-            <span className="block h-8 my-1 text-3xl font-m text-gray-600 uppercase">{fname}</span> 
-            <span className="block font-m text-6xl font-bold uppercase">{lname}</span>
+            <span className="block h-8 my-1 text-2xl font-m text-gray-600 uppercase">{fname}</span> 
+            <span className="block font-m text-5xl font-bold uppercase">{lname}</span>
             <span className="block mt-1 uppercase text-xs text-gray-700">{title}</span>
           </div>
           <div className="flex w-full mt-6 flex-row justify-between gap-2 font-m">
@@ -80,8 +89,14 @@ function App() {
               <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 font-bold border-2 border-gray-300">
                 EDUCATION
               </span>
-              <span className="text-md text-gray-900 font-m">
+              <span className="block text-xl font-semibold mt-3 text-gray-900 font-m">
+                {degree}
+              </span>
+              <span className="block text-xl text-medium text-gray-900 font-m">
                 {school}
+              </span>
+              <span className="block my-1 text-sm text-medium">
+                <span className="inline">{startTime} - {endTime}</span>
               </span>
             </div>
             <div className="row1 w-1/2 p-2">
