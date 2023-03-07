@@ -55,10 +55,14 @@ function App() {
               setDegree(e.target.value)
             }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
             <div className="flex w-full gap-8">
-              <label htmlFor="startdate"></label>
-              <input type="date" onChange={(e) =>{
-                setDegree(e.target.value)
-              }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+              <div className="">
+                <label htmlFor="startdate">Start Date</label>
+                <input type="date" onChange={(e) =>{
+                  setDegree(e.target.value)
+                }} placeholder='Degree' className="w-full p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+              </div>
+              
+             
                 <input type="date" onChange={(e) =>{
                 setDegree(e.target.value)
               }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
