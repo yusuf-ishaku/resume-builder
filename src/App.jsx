@@ -30,6 +30,12 @@ function App() {
   let addNew = () =>{
     if(school==="" || degree==="" || endTime==="" || startTime===""){
        alert('missing input');
+    }else{
+      setSchoolCount([...[{school, degree, endTime, startTime}]]);
+      document.querySelector(".school").value = "";
+      document.querySelector(".std").value = "";
+      document.querySelector(".degree").value = "";
+      document.querySelector(".edt").value = "";
     }
   }
 
@@ -58,38 +64,50 @@ function App() {
             </h3>
             <input type="text" onChange={(e) =>{
               setSchool(e.target.value);
-              setSchoolCount(...{school, degree, startTime, endTime} )
-            }} placeholder='Name of School' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+              // setSchoolCount(...{school, degree, startTime, endTime} )
+              setSchoolCount([...[{school, degree, startTime, endTime}]] )
+            }} placeholder='Name of School' className="school w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
             <input type="text" onChange={(e) =>{
               setDegree(e.target.value);
-              setSchoolCount([...{school, degree, startTime, endTime}] )
+              setSchoolCount([...[{school, degree, startTime, endTime}]] )
               console.log(startTime)
-            }} placeholder='Degree' className="w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+            }} placeholder='Degree' className="degree w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
             <div className="flex w-full gap-8">
               <div className="">
                 <label htmlFor="startdate">Start Date</label>
                 <input type="date" onChange={(e) =>{
                   setStartTime(e.target.value);
-                  setSchoolCount([...{school, degree, startTime, endTime}] )
+                  // setSchoolCount([...{school, degree, startTime, endTime}] );
+                  setSchoolCount([...[{school, degree, startTime, endTime}]] )
                   console.log(endTime)
-                }} placeholder='Degree' className="w-full p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+                }} placeholder='Degree' className="w-full std p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
               </div>
               <div className="">
                 <label htmlFor="startdate">End Date</label>
                 <input type="date" onChange={(e) =>{
                 setEndTime(e.target.value);
-                console.log(degree)
-                }} placeholder='Degree' className="w-full p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
+                console.log(degree);
+                setSchoolCount([...[{school, degree, startTime, endTime}]] )
+                }} placeholder='Degree' className="w-full edt p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
               </div>
+             
             </div>
+           
             <div className="w-full flex justify-end">
                 <button onClick={addNew} className="w-fit bg-red-800 p-2 px-5 rounded-md border-2 border-red-800 text-white hover:bg-white hover:text-red-800">
                   Add
                 </button>
-              </div>
+            </div>
           </div>
+        <div className="">
+          <textarea placeholder='I am Example...I am an exampler' className='text-gray-600 text-xl focus:outline-none rounded-md border-gray-600 border-2 my-2 p-3' name="bio" id="bio" cols="30" rows="10">
+
+          </textarea>
         </div>
-        <div className="w-1/2 p-4 h-[100vh] flex flex-col items-center border-2">
+        </div>
+        
+        
+        <div className="w-1/2 fixed top-0 left-[50%] right-0 p-4 h-[100vh] flex flex-col items-center border-2">
           <div className="min-w-[50%] max-w-[90%] min-h-32 p-4 text-center border-gray-400 border-2 max-h-40">
             <span className="block h-8 my-1 text-2xl font-m text-gray-600 uppercase">{fname}</span> 
             <span className="block font-m text-5xl font-bold uppercase">{lname}</span>
@@ -100,7 +118,11 @@ function App() {
               <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 font-bold border-2 border-gray-300">
                 EDUCATION
               </span>
-              
+              {schoolCount.map((x) =>{
+                return(
+                  <EducationBar degree = {x.degree} school = {x.school} endTime = {x.endTime} startTime = {x.startTime}></EducationBar>
+                )
+              })}
             </div>
             <div className="row1 w-1/2 p-2">
               <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 border-2 font-bold border-gray-300">

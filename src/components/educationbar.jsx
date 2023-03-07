@@ -1,3 +1,5 @@
+import { TbEdit } from "react-icons/tb";
+
 export const EducationBar = (props) =>{
     return(
         <>
@@ -9,6 +11,9 @@ export const EducationBar = (props) =>{
             </span>
             <span className="block my-1 text-sm text-medium">
                 <span className="inline">{props.startTime} - {props.endTime}</span>
+            </span>
+            <span className="flex justify-end w-full">
+                <TbEdit></TbEdit>
             </span>
         </>
     )
