@@ -1,15 +1,27 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import React from 'react';
 import reactLogo from './assets/react.svg';
 import { RxCaretDown } from "react-icons/rx";
 import { RxCaretUp } from "react-icons/rx";
 import './App.css'
 import { EducationBar } from './components/educationbar';
-
-
+import {GrAddCircle} from "react-icons/gr"
+import { IconContext } from 'react-icons';
+import Pdf from "react-to-pdf";
 function App() {
+  const ref = React.createRef();
+  const options = {
+    orientation: 'landscape',
+    unit: 'in',
+    format: [4,2]
+};
   const [fname, setFname] = useState("First Name");
   const [lname, setLname] = useState("Last Name");
   const [title, setTitle] = useState("Professional Title");
+  const [skillHidden, setSkillHidden] = useState(false);
+  const [skillinputHide, setSkillInputHide] = useState(false)
+  const [skills, setSkills] = useState([]);
+  const [skill, setSkill] = useState("")
   const[bio, setBio] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [eduinputHide, setEduInputHide] = useState(false);
@@ -29,6 +41,19 @@ function App() {
       setEduInputHide(true);
       setHidden(true);
     }
+  }
+  let createrSkill = () =>{
+    if(skillinputHide === true){
+      setSkillHidden(false);
+      setSkillInputHide(false)
+    }else{
+      setSkillHidden(true);
+      setSkillInputHide(true)
+    }
+  }
+  let addSkill = () =>{
+    
+    setSkills(skills.concat(skill))
   }
   let createrBio = () =>{
     if(bioInputHide === true){
@@ -122,10 +147,32 @@ function App() {
             </textarea>
           
           </div>
+          <button className="w-fit my-1 flex items-center border-gray-800 hover:text-red-800 hover:bg-white rounded-md text-white border-2 px-2 p-1 bg-red-800" onClick={createrSkill}>
+            Add Skills <span className={skillHidden ? "hidden" : "inline"}><RxCaretDown></RxCaretDown></span><span className={skillHidden ? "block" : "hidden"}><RxCaretUp></RxCaretUp></span>
+          </button>
+          <div className={skillinputHide ? 'eduinput  w-full p-3 h-fit border-red-800 border-2 rounded-md mt-1' : "hidden"}>
+            <div className="w-full flex items-center">
+              <input type="text" className='w-full border-red-800 border-2' onChange={(e) =>{
+                setSkill(e.target.value)
+              }} />
+
+              <span className="block w-fit mx-2 hover:cursor-pointer" onClick={addSkill}>
+                <IconContext.Provider value={{size:"24"}}>
+                  <GrAddCircle></GrAddCircle>
+                </IconContext.Provider>
+              </span>
+             
+            </div>
+          </div>
+          <Pdf targetRef={ref} filename="div-blue.pdf">
+            {({ toPdf }) => (
+              <button onClick={toPdf}>Generate pdf</button>
+            )}
+          </Pdf>
         </div>
 
-
-        <div className="w-1/2 fixed top-0 left-[50%] right-0 p-4 h-[100vh] flex flex-col items-center border-2">
+        
+        <div ref={ref} className="w-1/2 fixed top-0 left-[50%] right-0 p-4 h-[100vh] flex flex-col items-center border-2">
           <div className="min-w-[20%] max-w-[90%] h-fit p-2 text-center border-gray-400 border-2 max-h-40">
             <span className="block text-md font-m py-1 leading-none text-gray-600 uppercase">{fname}</span>
             <span className="block font-m text-lg py-1 pt-0 leading-none font-bold uppercase">{lname}</span>
@@ -148,15 +195,20 @@ function App() {
                   <span className="block my-1 uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-300">
                     Profile
                   </span>
-                  <p className="profile text-[0.9rem] leading-none">
+                  <span className="block w-1/2 profile py-1 text-[0.7rem] leading-none">
                     {bio? bio : "I am a creative designer, I love this, I am..."}
-                  </p>
+                  </span>
                   <span className="block my-1 uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-300">
                     Skills
                   </span>
-                  <p className="skills text-[0.9rem] leading-none">
-
-                  </p>
+                  <span className="w-1/2 flex flex-col h-auto py-1 skills text-[0.7rem] leading-none">
+                    {skills.length ? skills.map((x)=>{
+                        return(
+                          <span className='w-[80%]'>{x}</span>
+                        )
+                      }): "Interpersonal Communication etc."
+                    }
+                  </span>
                 </div>
               </div>
               <div className='w-1/2'>
