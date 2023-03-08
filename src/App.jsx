@@ -31,7 +31,8 @@ function App() {
     if(school==="" || degree==="" || endTime==="" || startTime===""){
        alert('missing input');
     }else{
-      setSchoolCount([...[{school, degree, endTime, startTime}]]);
+
+      setSchoolCount(schoolCount.concat([{school, degree, endTime, startTime}]));
       document.querySelector(".school").value = "";
       document.querySelector(".std").value = "";
       document.querySelector(".degree").value = "";
@@ -46,7 +47,6 @@ function App() {
         <div className="w-1/2 h-fit p-6 flex flex-col">
           <input type="text" placeholder='First Name' className="grow h-10 my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" onChange={(e)=>{
             setFname(e.target.value);
-           
           }} required/>
           <input type="text" placeholder="Last Name" className="grow my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" onChange={(e) =>{
             setLname(e.target.value)
@@ -65,11 +65,11 @@ function App() {
             <input type="text" onChange={(e) =>{
               setSchool(e.target.value);
               // setSchoolCount(...{school, degree, startTime, endTime} )
-              setSchoolCount([...[{school, degree, startTime, endTime}]] )
+              // setSchoolCount([...[{school, degree, startTime, endTime}]] )
             }} placeholder='Name of School' className="school w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
             <input type="text" onChange={(e) =>{
               setDegree(e.target.value);
-              setSchoolCount([...[{school, degree, startTime, endTime}]] )
+              // setSchoolCount([...[{school, degree, startTime, endTime}]] )
               console.log(startTime)
             }} placeholder='Degree' className="degree w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
             <div className="flex w-full gap-8">
@@ -78,7 +78,7 @@ function App() {
                 <input type="date" onChange={(e) =>{
                   setStartTime(e.target.value);
                   // setSchoolCount([...{school, degree, startTime, endTime}] );
-                  setSchoolCount([...[{school, degree, startTime, endTime}]] )
+                  // setSchoolCount([...[{school, degree, startTime, endTime}]] )
                   console.log(endTime)
                 }} placeholder='Degree' className="w-full std p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
               </div>
@@ -87,7 +87,7 @@ function App() {
                 <input type="date" onChange={(e) =>{
                 setEndTime(e.target.value);
                 console.log(degree);
-                setSchoolCount([...[{school, degree, startTime, endTime}]] )
+                // setSchoolCount([...[{school, degree, startTime, endTime}]] )
                 }} placeholder='Degree' className="w-full edt p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
               </div>
              
@@ -113,8 +113,8 @@ function App() {
             <span className="block font-m text-5xl font-bold uppercase">{lname}</span>
             <span className="block mt-1 uppercase text-xs text-gray-700">{title}</span>
           </div>
-          <div className="flex w-full mt-6 flex-row justify-between gap-2 font-m">
-            <div className="row1 w-1/2 p-2">
+          <div className="flex  h-[100px] w-full mt-6 flex-col flex-wrap justify-between gap-2 font-m">
+            <div className="flex flex-col flex-wrap row1 w-1/2 p-2">
               <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 font-bold border-2 border-gray-300">
                 EDUCATION
               </span>

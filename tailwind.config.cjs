@@ -2,7 +2,8 @@
 module.exports = {
   content: [
     "./index.html",
-    "./src/App.jsx"
+    "./src/App.jsx",
+    "./src/components/educationbar.jsx"
   ],
   theme: {
     extend: {},
