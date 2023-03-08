@@ -10,8 +10,11 @@ function App() {
   const [fname, setFname] = useState("First Name");
   const [lname, setLname] = useState("Last Name");
   const [title, setTitle] = useState("Professional Title");
+  const[bio, setBio] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [eduinputHide, setEduInputHide] = useState(false);
+  const [bioInputHide, setBioInputHide] = useState(false);
+  const [bioHidden, setBioHidden] = useState(false)
   const [schoolCount, setSchoolCount] = useState([]);
   const [school, setSchool] = useState("");
   const [degree, setDegree] = useState("");
@@ -25,6 +28,15 @@ function App() {
     } else {
       setEduInputHide(true);
       setHidden(true);
+    }
+  }
+  let createrBio = () =>{
+    if(bioInputHide === true){
+      setBioHidden(false);
+      setBioInputHide(false);
+    }else{
+      setBioHidden(true);
+      setBioInputHide(true)
     }
   }
   let addNew = () => {
@@ -99,10 +111,16 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="">
-            <textarea placeholder='I am Example...I am an exampler' className='text-gray-600 text-xl focus:outline-none rounded-md border-gray-600 border-2 my-2 p-3' name="bio" id="bio" cols="30" rows="10">
+          <button className="w-fit my-1 flex items-center border-gray-800 hover:text-red-800 hover:bg-white rounded-md text-white border-2 px-2 p-1 bg-red-800" onClick={createrBio}>
+            Add Bio <span className={bioHidden ? "hidden" : "inline"}><RxCaretDown></RxCaretDown></span><span className={bioHidden ? "block" : "hidden"}><RxCaretUp></RxCaretUp></span>
+          </button>
+          <div className={bioInputHide ? "block": 'hidden'}>
+            <textarea onChange={(e) =>{
+              setBio(e.target.value)
+            }} placeholder='I am Example...I am an exampler' className='text-gray-600 text-xl focus:outline-none rounded-md border-gray-600 border-2 my-2 p-3' name="bio" id="bio" cols="30" rows="10">
 
             </textarea>
+          
           </div>
         </div>
 
@@ -114,23 +132,36 @@ function App() {
             <span className="block uppercase font-semibold text-[0.5rem] text-gray-700">{title}</span>
           </div>
           <div className="flex  h-[100px] w-full mt-2 flex-col flex-wrap justify-between gap-2 font-m">
-            <div className="h-[100vh] grid grid-cols-2 row1 w-full p-2">
-              <div className="h-[100vh] w-1/2">
+            <div className="h-[100vh] grid grid-cols-1 row1 w-full p-2">
+              <div className="h-[100vh] w-1/2  border-r-2 border-gray-300">
                 <span className="block uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 font-bold border-2 border-gray-300">
                   EDUCATION
                 </span>
-                <span className="h-[100vh] flex flex-col flex-wrap w-full">
-                    {schoolCount.map((x) => {
-                      return (
-                        <EducationBar degree={x.degree} school={x.school} endTime={x.endTime} startTime={x.startTime}></EducationBar>
-                      )
-                    })}
-                    <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 border-2 font-bold border-gray-300">
-                Profile
-                </span>
-              </span>
+                <div className="h-[100vh] flex flex-col flex-wrap w-full">
+                  
+                  {schoolCount.length ?
+                    schoolCount.map((x) => {
+                    return (
+                      <EducationBar degree={x.degree} school={x.school} endTime={x.endTime} startTime={x.startTime}></EducationBar>
+                    );
+                  }): <EducationBar degree="MSc." school="Resume builder university" endTime="02-06-90" startTime="02-06-94"></EducationBar>}
+                  <span className="block my-1 uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-300">
+                    Profile
+                  </span>
+                  <p className="profile text-[0.9rem] leading-none">
+                    {bio? bio : "I am a creative designer, I love this, I am..."}
+                  </p>
+                  <span className="block my-1 uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-300">
+                    Skills
+                  </span>
+                  <p className="skills text-[0.9rem] leading-none">
+
+                  </p>
+                </div>
               </div>
-              <div className="w-1/2" />
+              <div className='w-1/2'>
+
+              </div>
             </div>
           </div>
         </div>
