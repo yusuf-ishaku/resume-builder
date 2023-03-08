@@ -7,9 +7,9 @@ import { EducationBar } from './components/educationbar';
 
 
 function App() {
-  const[fname, setFname] = useState("First Name");
+  const [fname, setFname] = useState("First Name");
   const [lname, setLname] = useState("Last Name");
-  const[title, setTitle] = useState("Professional Title");
+  const [title, setTitle] = useState("Professional Title");
   const [hidden, setHidden] = useState(false);
   const [eduinputHide, setEduInputHide] = useState(false);
   const [schoolCount, setSchoolCount] = useState([]);
@@ -18,21 +18,21 @@ function App() {
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
 
-  let creater = () =>{
-    if(eduinputHide === true){
+  let creater = () => {
+    if (eduinputHide === true) {
       setEduInputHide(false);
       setHidden(false);
-    }else{
+    } else {
       setEduInputHide(true);
       setHidden(true);
     }
   }
-  let addNew = () =>{
-    if(school==="" || degree==="" || endTime==="" || startTime===""){
-       alert('missing input');
-    }else{
+  let addNew = () => {
+    if (school === "" || degree === "" || endTime === "" || startTime === "") {
+      alert('missing input');
+    } else {
 
-      setSchoolCount(schoolCount.concat([{school, degree, endTime, startTime}]));
+      setSchoolCount(schoolCount.concat([{ school, degree, endTime, startTime }]));
       document.querySelector(".school").value = "";
       document.querySelector(".std").value = "";
       document.querySelector(".degree").value = "";
@@ -45,29 +45,29 @@ function App() {
     <div className="App">
       <div className="w-full h-full  flex">
         <div className="w-1/2 h-fit p-6 flex flex-col">
-          <input type="text" placeholder='First Name' className="grow h-10 my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" onChange={(e)=>{
+          <input type="text" placeholder='First Name' className="grow h-10 my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" onChange={(e) => {
             setFname(e.target.value);
-          }} required/>
-          <input type="text" placeholder="Last Name" className="grow my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" onChange={(e) =>{
+          }} required />
+          <input type="text" placeholder="Last Name" className="grow my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" onChange={(e) => {
             setLname(e.target.value)
-          }} required/>
-          <input type="email" onChange={(e) =>{
+          }} required />
+          <input type="email" onChange={(e) => {
             setTitle(e.target.value)
 
-          }} placeholder='e.g. example@example.com' className="grow my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" required/>
+          }} placeholder='e.g. example@example.com' className="grow my-5 placeholder-gray-600 w-80 p-3 focus:outline-none rounded-md border-2 border-gray-800" required />
           <button className="w-fit flex items-center border-gray-800 hover:text-red-800 hover:bg-white rounded-md text-white border-2 px-2 p-1 bg-red-800" onClick={creater}>
-            Add Education <span className={hidden ? "hidden" : "inline"}><RxCaretDown></RxCaretDown></span><span className={hidden ? "block": "hidden"}><RxCaretUp></RxCaretUp></span>
+            Add Education <span className={hidden ? "hidden" : "inline"}><RxCaretDown></RxCaretDown></span><span className={hidden ? "block" : "hidden"}><RxCaretUp></RxCaretUp></span>
           </button>
-          <div className= {eduinputHide? 'eduinput  w-full p-3 h-fit border-red-800 border-2 rounded-md mt-1': "hidden"}>
+          <div className={eduinputHide ? 'eduinput  w-full p-3 h-fit border-red-800 border-2 rounded-md mt-1' : "hidden"}>
             <h3 className="text-md-text-gray-800">
               Add Education
             </h3>
-            <input type="text" onChange={(e) =>{
+            <input type="text" onChange={(e) => {
               setSchool(e.target.value);
               // setSchoolCount(...{school, degree, startTime, endTime} )
               // setSchoolCount([...[{school, degree, startTime, endTime}]] )
             }} placeholder='Name of School' className="school w-full p-2 my-4 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
-            <input type="text" onChange={(e) =>{
+            <input type="text" onChange={(e) => {
               setDegree(e.target.value);
               // setSchoolCount([...[{school, degree, startTime, endTime}]] )
               console.log(startTime)
@@ -75,7 +75,7 @@ function App() {
             <div className="flex w-full gap-8">
               <div className="">
                 <label htmlFor="startdate">Start Date</label>
-                <input type="date" onChange={(e) =>{
+                <input type="date" onChange={(e) => {
                   setStartTime(e.target.value);
                   // setSchoolCount([...{school, degree, startTime, endTime}] );
                   // setSchoolCount([...[{school, degree, startTime, endTime}]] )
@@ -84,50 +84,53 @@ function App() {
               </div>
               <div className="">
                 <label htmlFor="startdate">End Date</label>
-                <input type="date" onChange={(e) =>{
-                setEndTime(e.target.value);
-                console.log(degree);
-                // setSchoolCount([...[{school, degree, startTime, endTime}]] )
+                <input type="date" onChange={(e) => {
+                  setEndTime(e.target.value);
+                  console.log(degree);
+                  // setSchoolCount([...[{school, degree, startTime, endTime}]] )
                 }} placeholder='Degree' className="w-full edt p-2 placeholder-gray-600 focus:outline-none rounded-md border-2 border-gray-900" />
               </div>
-             
-            </div>
-           
-            <div className="w-full flex justify-end">
-                <button onClick={addNew} className="w-fit bg-red-800 p-2 px-5 rounded-md border-2 border-red-800 text-white hover:bg-white hover:text-red-800">
-                  Add
-                </button>
-            </div>
-          </div>
-        <div className="">
-          <textarea placeholder='I am Example...I am an exampler' className='text-gray-600 text-xl focus:outline-none rounded-md border-gray-600 border-2 my-2 p-3' name="bio" id="bio" cols="30" rows="10">
 
-          </textarea>
-        </div>
-        </div>
-        
-        
-        <div className="w-1/2 fixed top-0 left-[50%] right-0 p-4 h-[100vh] flex flex-col items-center border-2">
-          <div className="min-w-[50%] max-w-[90%] min-h-32 p-4 text-center border-gray-400 border-2 max-h-40">
-            <span className="block h-8 my-1 text-2xl font-m text-gray-600 uppercase">{fname}</span> 
-            <span className="block font-m text-5xl font-bold uppercase">{lname}</span>
-            <span className="block mt-1 uppercase text-xs text-gray-700">{title}</span>
-          </div>
-          <div className="flex  h-[100px] w-full mt-6 flex-col flex-wrap justify-between gap-2 font-m">
-            <div className="flex flex-col flex-wrap row1 w-1/2 p-2">
-              <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 font-bold border-2 border-gray-300">
-                EDUCATION
-              </span>
-              {schoolCount.map((x) =>{
-                return(
-                  <EducationBar degree = {x.degree} school = {x.school} endTime = {x.endTime} startTime = {x.startTime}></EducationBar>
-                )
-              })}
             </div>
-            <div className="row1 w-1/2 p-2">
-              <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 border-2 font-bold border-gray-300">
+
+            <div className="w-full flex justify-end">
+              <button onClick={addNew} className="w-fit bg-red-800 p-2 px-5 rounded-md border-2 border-red-800 text-white hover:bg-white hover:text-red-800">
+                Add
+              </button>
+            </div>
+          </div>
+          <div className="">
+            <textarea placeholder='I am Example...I am an exampler' className='text-gray-600 text-xl focus:outline-none rounded-md border-gray-600 border-2 my-2 p-3' name="bio" id="bio" cols="30" rows="10">
+
+            </textarea>
+          </div>
+        </div>
+
+
+        <div className="w-1/2 fixed top-0 left-[50%] right-0 p-4 h-[100vh] flex flex-col items-center border-2">
+          <div className="min-w-[20%] max-w-[90%] h-fit p-2 text-center border-gray-400 border-2 max-h-40">
+            <span className="block text-md font-m py-1 leading-none text-gray-600 uppercase">{fname}</span>
+            <span className="block font-m text-lg py-1 pt-0 leading-none font-bold uppercase">{lname}</span>
+            <span className="block uppercase font-semibold text-[0.5rem] text-gray-700">{title}</span>
+          </div>
+          <div className="flex  h-[100px] w-full mt-2 flex-col flex-wrap justify-between gap-2 font-m">
+            <div className="h-[100vh] grid grid-cols-2 row1 w-full p-2">
+              <div className="h-[100vh] w-1/2">
+                <span className="block uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 font-bold border-2 border-gray-300">
+                  EDUCATION
+                </span>
+                <span className="h-[100vh] flex flex-col flex-wrap w-full">
+                    {schoolCount.map((x) => {
+                      return (
+                        <EducationBar degree={x.degree} school={x.school} endTime={x.endTime} startTime={x.startTime}></EducationBar>
+                      )
+                    })}
+                    <span className="block uppercase w-fit p-1 px-3 text-lg h-fit text-gray-900 border-2 font-bold border-gray-300">
                 Profile
+                </span>
               </span>
+              </div>
+              <div className="w-1/2" />
             </div>
           </div>
         </div>
