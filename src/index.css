@@ -9,4 +9,7 @@
   .font-m{
     font-family: 'Montserrat', sans-serif;
   }
+  .border-1{
+    border-width: 1px;
+  }
 }

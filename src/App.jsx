@@ -164,7 +164,7 @@ function App() {
              
             </div>
           </div>
-          <Pdf targetRef={ref} filename="div-blue.pdf"options={options} x={.1} y={.1} scale={1}>
+          <Pdf targetRef={ref} filename="div-blue.pdf"options={options} x={.14} y={.08} scale={1}>
             {({ toPdf }) => (
               <button onClick={toPdf}>Generate pdf</button>
             )}
@@ -172,16 +172,16 @@ function App() {
         </div>
 
         
-        <div ref={ref} className="w-1/2 top-0 left-[50%] right-0 p-4 h-[1122.24px] flex flex-col items-center border-2">
-          <div className="min-w-[20%] max-w-[90%] h-fit p-2 text-center border-gray-400 border-2 max-h-40">
-            <span className="block text-md font-m py-1 leading-none text-gray-600 uppercase">{fname}</span>
+        <div ref={ref} className="w-1/2 top-0 left-[50%] right-0 p-4 h-[1121px] flex flex-col items-center border-2 border-gray-900">
+          <div className="min-w-[20%] max-w-[90%] h-fit p-2 text-center border-gray-900 border-1 max-h-40">
+            <span className="block text-md font-m py-1 leading-none text-gray-900 uppercase">{fname}</span>
             <span className="block font-m text-lg py-1 pt-0 leading-none font-bold uppercase">{lname}</span>
-            <span className="block uppercase font-semibold text-[0.5rem] text-gray-700">{title}</span>
+            <span className="block uppercase font-semibold text-[0.5rem] text-gray-900">{title}</span>
           </div>
-          <div className="flex  h-[100px] w-full mt-2 flex-col flex-wrap justify-between gap-2 font-m">
+          <div className="flex  h-[1122.24px] w-full mt-2 flex-col flex-wrap justify-between gap-2 font-m">
             <div className="h-[1122.24px] grid grid-cols-1 row1 w-full p-2">
-              <div className="h-[1122.24px] w-1/2  border-r-2 border-gray-300">
-                <span className="block uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 font-bold border-2 border-gray-300">
+              <div className="h-[1122.24px] w-1/2  border-r-2 border-gray-900">
+                <span className="block uppercase py-1 w-fit px-3 text-[0.7rem] h-fit text-gray-900 font-bold border-1 border-gray-700">
                   EDUCATION
                 </span>
                 <div className="h-[100%] flex flex-col flex-wrap w-full">
@@ -192,13 +192,13 @@ function App() {
                       <EducationBar degree={x.degree} school={x.school} endTime={x.endTime} startTime={x.startTime}></EducationBar>
                     );
                   }): <EducationBar degree="MSc." school="Resume builder university" endTime="02-06-90" startTime="02-06-94"></EducationBar>}
-                  <span className="block my-1 uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-300">
+                  <span className="block my-1 uppercase py-1 w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-700">
                     Profile
                   </span>
                   <span className="block w-1/2 profile py-1 text-[0.7rem] leading-none">
                     {bio? bio : "I am a creative designer, I love this, I am..."}
                   </span>
-                  <span className="block my-1 uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-300">
+                  <span className="block my-1 py-1 uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-700">
                     Skills
                   </span>
                   <span className="w-1/2 flex flex-col h-auto py-1 skills text-[0.7rem] leading-none">
