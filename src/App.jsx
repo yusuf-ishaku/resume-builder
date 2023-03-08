@@ -11,9 +11,9 @@ import Pdf from "react-to-pdf";
 function App() {
   const ref = React.createRef();
   const options = {
-    orientation: 'landscape',
+    orientation: 'portrait',
     unit: 'in',
-    format: [4,2]
+    format: [8.27,11.69]
 };
   const [fname, setFname] = useState("First Name");
   const [lname, setLname] = useState("Last Name");
@@ -164,7 +164,7 @@ function App() {
              
             </div>
           </div>
-          <Pdf targetRef={ref} filename="div-blue.pdf">
+          <Pdf targetRef={ref} filename="div-blue.pdf"options={options} x={.1} y={.1} scale={1}>
             {({ toPdf }) => (
               <button onClick={toPdf}>Generate pdf</button>
             )}
@@ -172,19 +172,19 @@ function App() {
         </div>
 
         
-        <div ref={ref} className="w-1/2 fixed top-0 left-[50%] right-0 p-4 h-[100vh] flex flex-col items-center border-2">
+        <div ref={ref} className="w-1/2 top-0 left-[50%] right-0 p-4 h-[1122.24px] flex flex-col items-center border-2">
           <div className="min-w-[20%] max-w-[90%] h-fit p-2 text-center border-gray-400 border-2 max-h-40">
             <span className="block text-md font-m py-1 leading-none text-gray-600 uppercase">{fname}</span>
             <span className="block font-m text-lg py-1 pt-0 leading-none font-bold uppercase">{lname}</span>
             <span className="block uppercase font-semibold text-[0.5rem] text-gray-700">{title}</span>
           </div>
           <div className="flex  h-[100px] w-full mt-2 flex-col flex-wrap justify-between gap-2 font-m">
-            <div className="h-[100vh] grid grid-cols-1 row1 w-full p-2">
-              <div className="h-[100vh] w-1/2  border-r-2 border-gray-300">
+            <div className="h-[1122.24px] grid grid-cols-1 row1 w-full p-2">
+              <div className="h-[1122.24px] w-1/2  border-r-2 border-gray-300">
                 <span className="block uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 font-bold border-2 border-gray-300">
                   EDUCATION
                 </span>
-                <div className="h-[100vh] flex flex-col flex-wrap w-full">
+                <div className="h-[100%] flex flex-col flex-wrap w-full">
                   
                   {schoolCount.length ?
                     schoolCount.map((x) => {
