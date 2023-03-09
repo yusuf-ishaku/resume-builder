@@ -32,6 +32,7 @@ function App() {
   const [degree, setDegree] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
+  const [we, setWe] = useState(false)
 
   let creater = () => {
     if (eduinputHide === true) {
@@ -62,6 +63,13 @@ function App() {
     }else{
       setBioHidden(true);
       setBioInputHide(true)
+    }
+  }
+  let creatWe = ()=>{
+    if(we === true){
+      setWe(false)
+    }else{
+      setWe(true)
     }
   }
   let addNew = () => {
@@ -161,12 +169,27 @@ function App() {
                   <GrAddCircle></GrAddCircle>
                 </IconContext.Provider>
               </span>
-             
+            </div>
+          </div>
+          <button className="w-fit my-1 flex items-center border-gray-800 hover:text-red-800 hover:bg-white rounded-md text-white border-2 px-2 p-1 bg-red-800" onClick={creatWe}>
+            Add Work Experience <span className={we ? "hidden" : "inline"}><RxCaretDown></RxCaretDown></span><span className={we ? "block" : "hidden"}><RxCaretUp></RxCaretUp></span>
+          </button>
+          <div className={we ? "block border-red-800 border-1 rounded-md p-2": "hidden"}>
+            <div className="flex flex-row w-auto items-center">
+              <div className="w-full inputs flex flex-col">
+                <input type="text" placeholder='Company/Organization' className="w-full border-red-800 border-1 p-1" />
+                <input type="text" placeholder='Role' className="w-full my-2 border-red-800 border-1 p-1" />
+              </div>
+              <span className="block w-fit mx-2 hover:cursor-pointer" onClick={addSkill}>
+                  <IconContext.Provider value={{size:"24"}}>
+                    <GrAddCircle></GrAddCircle>
+                  </IconContext.Provider>
+                </span>
             </div>
           </div>
           <Pdf targetRef={ref} filename="div-blue.pdf"options={options} x={.14} y={.08} scale={1}>
             {({ toPdf }) => (
-              <button onClick={toPdf}>Generate pdf</button>
+              <button className='bg-red-800 p-2 border-1 rounded-md text-white' onClick={toPdf}>Generate pdf</button>
             )}
           </Pdf>
         </div>
@@ -181,7 +204,7 @@ function App() {
           <div className="flex  h-[1122.24px] w-full mt-2 flex-col flex-wrap justify-between gap-2 font-m">
             <div className="h-[1122.24px] grid grid-cols-1 row1 w-full p-2">
               <div className="h-[1122.24px] w-1/2  border-r-2 border-gray-900">
-                <span className="block uppercase py-1 w-fit px-3 text-[0.7rem] h-fit text-gray-900 font-bold border-1 border-gray-700">
+                <span className="block uppercase py-1 w-fit px-3 text-[0.9rem] h-fit text-gray-900 font-bold border-1 border-gray-900">
                   EDUCATION
                 </span>
                 <div className="h-[100%] flex flex-col flex-wrap w-full">
@@ -192,19 +215,27 @@ function App() {
                       <EducationBar degree={x.degree} school={x.school} endTime={x.endTime} startTime={x.startTime}></EducationBar>
                     );
                   }): <EducationBar degree="MSc." school="Resume builder university" endTime="02-06-90" startTime="02-06-94"></EducationBar>}
-                  <span className="block my-1 uppercase py-1 w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-700">
+                  <span className="block my-1 mt-4 uppercase py-1 w-fit px-3 text-md h-fit text-gray-900 border-2 font-bold border-gray-900">
                     Profile
                   </span>
-                  <span className="block w-1/2 profile py-1 text-[0.7rem] leading-none">
+                  <span className="block w-1/2 profile py-1 font-semibold text-md leading-5">
                     {bio? bio : "I am a creative designer, I love this, I am..."}
                   </span>
-                  <span className="block my-1 py-1 uppercase w-fit px-3 text-[0.7rem] h-fit text-gray-900 border-2 font-bold border-gray-700">
+                  <span className="block my-1 mt-4 py-1 uppercase w-fit px-3 text-[0.9rem] h-fit text-gray-900 border-2 font-bold border-gray-900">
                     Skills
                   </span>
-                  <span className="w-1/2 flex flex-col h-auto py-1 skills text-[0.7rem] leading-none">
-                    {skills.length ? skills.map((x)=>{
+                  <span className="w-1/2 flex flex-col h-auto py-1 font-semibold skills text-md leading-5">
+                    {skills.length ? skills.map((x,y)=>{
                         return(
-                          <span className='w-[80%]'>{x}</span>
+                          <ul className="list-disc">
+                            <li>
+                            <input rows={2} type="text" onBlur={(e) =>{
+                            skills[y] = e.target.value;
+                            
+                            setSkills(skills);
+                          }} defaultValue={x} className='w-[300px] px-1 focus:outline-none' readOnly={false} contentEditable={true}></input>
+                            </li>
+                          </ul>
                         )
                       }): "Interpersonal Communication etc."
                     }
