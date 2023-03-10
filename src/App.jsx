@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import React from 'react';
-import reactLogo from './assets/react.svg';
+// import reactLogo from './assets/react.svg';
 import { RxCaretDown } from "react-icons/rx";
 import { RxCaretUp } from "react-icons/rx";
 import './App.css'
