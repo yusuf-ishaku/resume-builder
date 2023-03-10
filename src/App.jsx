@@ -40,6 +40,8 @@ function App() {
   const[endWTime, setEndWTime] = useState("");
   const [ce, setCe] = useState(false);
   const [certs, setCerts] = useState([]);
+  const[certif, setCertif] = useState("");
+  const[cDate, setCDate] = useState("")
   
   let creatCe = ()=>{
     if(ce === true){
@@ -64,6 +66,13 @@ function App() {
     }else{
       setSkillHidden(true);
       setSkillInputHide(true)
+    }
+  }
+  let addCe = ()=>{
+    if(certif === "" || cDate === ""){
+      alert("missing input");
+    }else{
+      setCerts(certs.concat([{certif, cDate}]))
     }
   }
   let addSkill = () =>{
@@ -230,12 +239,21 @@ function App() {
             Add Certifications <span className={ce ? "hidden" : "inline"}><RxCaretDown></RxCaretDown></span><span className={ce ? "block" : "hidden"}><RxCaretUp></RxCaretUp></span>
           </button>
           <div className={ce? "w-full flex flex-col my-1 rounded-sm p-2 border-1 border-red-800 hover:text-red-800 hover:bg-white":"hidden" }>
+            <label htmlFor="" className='mx-2'>Certificate</label>
             <input type="text" placeholder='Certificate' className='w-auto mx-2 rounded-md border-red-800 border-1' onChange={(e) =>{
               setCertif(e.target.value);
             }} />
+            <label htmlFor="dateofcollection" className='mx-2'>
+              Date of Reciept
+            </label>
             <input type="date" className='border-red-800 border-1 mx-2 my-1 rounded-md' onChange={(e) =>{
               setCDate(e.target.value)
             }} />
+            <span className="block w-fit mx-2 hover:cursor-pointer" onClick={addCe}>
+                  <IconContext.Provider value={{size:"24"}}>
+                    <GrAddCircle></GrAddCircle>
+                  </IconContext.Provider>
+            </span>
           </div>
           <Pdf targetRef={ref} filename={fname} options={options} x={.14} y={.08} scale={1}>
             {({ toPdf }) => (
@@ -302,7 +320,9 @@ function App() {
                 </div>
               </div>
               <div className='w-1/2'>
-
+              <span className="block uppercase mt-2 py-1 w-fit px-3 text-[0.9rem] h-fit text-gray-900 font-bold border-1 border-gray-900">
+                    work Experience
+              </span>
               </div>
             </div>
           </div>
