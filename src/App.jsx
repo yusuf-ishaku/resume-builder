@@ -32,8 +32,22 @@ function App() {
   const [degree, setDegree] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
-  const [we, setWe] = useState(false)
-
+  const [we, setWe] = useState(false);
+  const[company, setCompany] = useState("e.g. Microsoft");
+  const [role, setRole] = useState("Product Manager");
+  const[workE, setWorkE] = useState([]);
+  const[startWTime, setStartWTime] = useState("");
+  const[endWTime, setEndWTime] = useState("");
+  const [ce, setCe] = useState(false);
+  const [certs, setCerts] = useState([]);
+  
+  let creatCe = ()=>{
+    if(ce === true){
+      setCe(false)
+    }else{
+      setCe(true)
+    }
+  }
   let creater = () => {
     if (eduinputHide === true) {
       setEduInputHide(false);
@@ -70,6 +84,13 @@ function App() {
       setWe(false)
     }else{
       setWe(true)
+    }
+  }
+  let addWe = () =>{
+    if(role === "" || company === ""){
+      alert("Missing inputs")
+    }else{
+      setWorkE(workE.concat([{ role, company, endWTime, startWTime }]));
     }
   }
   let addNew = () => {
@@ -177,17 +198,46 @@ function App() {
           <div className={we ? "block border-red-800 border-1 rounded-md p-2": "hidden"}>
             <div className="flex flex-row w-auto items-center">
               <div className="w-full inputs flex flex-col">
-                <input type="text" placeholder='Company/Organization' className="w-full border-red-800 border-1 p-1" />
-                <input type="text" placeholder='Role' className="w-full my-2 border-red-800 border-1 p-1" />
+                <input type="text" placeholder='Company/Organization' className="w-full border-red-800 border-1 p-1" onChange={(e)=>{
+                  setCompany(e.target.value)
+                }} />
+                <input type="text" placeholder='Role' className="w-full my-2 border-red-800 border-1 p-1" onChange={(e) =>{
+                  setRole(e.target.value)
+                }} />
+                <div className="w-full justify-between flex flex-row">
+                  <div className="flex flex-col">
+                    <label htmlFor="startWdate">Start Date</label>
+                    <input onChange={(e) =>{
+                      setStartWTime(e.target.value)
+                    }} type="date" placeholder='Role' className="w-full my-2 border-red-800 border-1 p-1" />
+                  </div>
+                  <div className="flex flex-col">
+                  <label htmlFor="endWdate">End Date</label>
+                    <input onChange={(e) =>{
+                      setEndWTime(e.target.value);
+                    }} type="date" placeholder='Role' className="w-full my-2 border-red-800 border-1 p-1" />
+                  </div>
+                </div> 
               </div>
-              <span className="block w-fit mx-2 hover:cursor-pointer" onClick={addSkill}>
+              <span className="block w-fit mx-2 hover:cursor-pointer" onClick={addWe}>
                   <IconContext.Provider value={{size:"24"}}>
                     <GrAddCircle></GrAddCircle>
                   </IconContext.Provider>
                 </span>
             </div>
           </div>
-          <Pdf targetRef={ref} filename="div-blue.pdf"options={options} x={.14} y={.08} scale={1}>
+          <button className="w-fit my-1 flex items-center border-gray-800 hover:text-red-800 hover:bg-white rounded-md text-white border-2 px-2 p-1 bg-red-800" onClick={creatCe}>
+            Add Certifications <span className={ce ? "hidden" : "inline"}><RxCaretDown></RxCaretDown></span><span className={ce ? "block" : "hidden"}><RxCaretUp></RxCaretUp></span>
+          </button>
+          <div className={ce? "w-full flex flex-col my-1 rounded-sm p-2 border-1 border-red-800 hover:text-red-800 hover:bg-white":"hidden" }>
+            <input type="text" placeholder='Certificate' className='w-auto mx-2 rounded-md border-red-800 border-1' onChange={(e) =>{
+              setCertif(e.target.value);
+            }} />
+            <input type="date" className='border-red-800 border-1 mx-2 my-1 rounded-md' onChange={(e) =>{
+              setCDate(e.target.value)
+            }} />
+          </div>
+          <Pdf targetRef={ref} filename={fname} options={options} x={.14} y={.08} scale={1}>
             {({ toPdf }) => (
               <button className='bg-red-800 p-2 border-1 rounded-md text-white' onClick={toPdf}>Generate pdf</button>
             )}
@@ -240,6 +290,15 @@ function App() {
                       }): "Interpersonal Communication etc."
                     }
                   </span>
+                  <span className="block uppercase mt-2 py-1 w-fit px-3 text-[0.9rem] h-fit text-gray-900 font-bold border-1 border-gray-900">
+                    work Experience
+                  </span>
+                    { workE.length ? workE.map((x) =>{
+                      return(
+                        <EducationBar degree = {x.company} school = {x.role} startTime = {x.startWTime} endTime = {x.endWTime}></EducationBar>
+                      )
+                    }): <EducationBar degree = "The Roothub" school = "Intern" startTime = "02-09-2022" endTime = "02-09-2023"></EducationBar>
+                    }
                 </div>
               </div>
               <div className='w-1/2'>
