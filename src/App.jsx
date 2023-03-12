@@ -10,6 +10,10 @@ import { IconContext } from 'react-icons';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/home';
 import { Navbar } from './components/navbar';
+import { Contact } from './pages/contact';
+import { Pricing } from './pages/pricing';
+import { Templates } from './pages/templates';
+import { About } from './pages/about-us';
 function App() {
   return (
     <div className="App">
@@ -17,10 +21,10 @@ function App() {
         <Navbar></Navbar>
         <Routes>
           <Route path="/" element={<Home/>}></Route>
-          <Route></Route>
-          <Route></Route>
-          <Route></Route>
-          <Route></Route>
+          <Route path='/contact' element={<Contact></Contact>}></Route>
+          <Route path='/pricing' element={<Pricing></Pricing>}></Route>
+          <Route path='/templates' element={<Templates></Templates>}></Route>
+          <Route path='/about' element={<About></About>}></Route>
           <Route></Route>
           <Route></Route>
           <Route></Route>
