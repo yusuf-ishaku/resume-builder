@@ -19,7 +19,17 @@
     background-color: blue;
     font-weight: 700;
   }
+  .z-full{
+    z-index: 9999;
+  }
   .leading-16{
     line-height: 3.8rem;
+  }
+  .my-list{
+    list-style-type: image;
+    list-style-image: url("../src/assets/check.png");
+  }
+  .border-x{
+    border-width: 32px;
   }
 }
