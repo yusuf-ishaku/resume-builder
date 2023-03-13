@@ -103,13 +103,31 @@ export const Home = () =>{
                         <img src={TCVS} alt="" />
                     </figure>
                 </section>
-                <section className="mx-32 flex flex-row items-center rounded-xl overflow-hidden drop-shadow-2xl bg-white w-auto h-fit my-16">
+                <section className="mx-32 flex pr-10 flex-row items-center justify-between rounded-xl overflow-hidden drop-shadow-2xl bg-white w-auto h-fit my-16">
                     <div className="">
                         <img src={CT} alt="" />
                     </div>
                     <article className="text-4xl text-blue-900 font-bold">
                         Do you need a custom CV template?
                     </article>
+                    <button className="ml-4 w-fit border-4 rounded-md p-2 font-semibold text-2xl border-blue-800 text-blue-800">
+                        Send a request
+                    </button>
+                </section>
+                <section className="mt-40 px-32 h-[90vh]">
+                    <header className="text-center">
+                        <h2 className="text-blue-900 font-bold text-4xl">Our Creative Templates</h2>
+                        <p className="text-xl mx-48 my-4 font-medium leading-8">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                        </p>
+                    </header>
+                    <section className="flex flex-row items-center">
+                        <div className="flex flex-col bg-white w-auto border-2">
+                            
+                        </div>
+                        <div className="flex flex-col bg-white w-auto border-2"></div>
+                        <div className="flex flex-col bg-white w-auto border-2"></div>
+                    </section>
                 </section>
             </div>
         </>
