@@ -121,12 +121,34 @@ export const Home = () =>{
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
                         </p>
                     </header>
-                    <section className="flex flex-row items-center">
-                        <div className="flex flex-col bg-white w-auto border-2">
-                            
+                    <section className="w-full flex flex-row items-center justify-between">
+                        <div className="flex flex-col h-[500px] bg-white drop-shadow-xl border-white md:w-[30%] border-6">
+                            <div className="bg-red-900 h-[82%]">
+
+                            </div>
+                            <div className="h-[18%] px-4 flex flex-row items-center justify-between">
+                                <button className="border-blue-600 p-2 px-4 text-white text-lg rounded-3xl bg-blue-600">See template</button>
+                                <button className="border-blue-600 border-2 border-3 text-lg p-2 px-4 rounded-3xl bg-white">Use Template</button>
+                            </div>
                         </div>
-                        <div className="flex flex-col bg-white w-auto border-2"></div>
-                        <div className="flex flex-col bg-white w-auto border-2"></div>
+                        <div className="flex flex-col h-[500px] md:w-[30%] border-white drop-shadow-xl bg-white w-auto border-6">
+                            <div className="bg-red-900 h-[82%]">
+
+                            </div>
+                            <div className="h-[18%] flex flex-row items-center justify-between">
+                                <button className="border-blue-600 bg-blue-600">See template</button>
+                                <button className="border-blue-600 bg-white">Use Template</button>
+                            </div>
+                        </div>
+                        <div className="flex flex-col h-[500px] md:w-[30%] border-white drop-shadow-xl bg-white w-auto border-6">
+                            <div className="bg-red-900 h-[82%]">
+
+                            </div>
+                            <div className="h-[18%] flex flex-row items-center justify-between">
+                                <button className="border-blue-600 bg-blue-600">See template</button>
+                                <button className="border-blue-600 bg-white">Use Template</button>
+                            </div>
+                        </div>
                     </section>
                 </section>
             </div>
