@@ -13,6 +13,9 @@ import F4 from "../assets/f4.png";
 import F5 from "../assets/f5.png";
 import F6 from "../assets/f6.png";
 import {Carousel} from "../components/carousel";
+import Sunny from "../assets/sunny.jpg";
+import Ajoy from "../assets/ajoy.jpg";
+import Jebin from "../assets/jebin.jpg"
 export const Home = () =>{
     return(
         <>
@@ -187,7 +190,7 @@ export const Home = () =>{
                         </article>
                     </header>
                     <article className="my-20">
-                        <Carousel></Carousel>
+                        <Carousel image3 ={Jebin} testname3 ="Jebin Khan" image={Sunny} image2 = {Ajoy} testname2="Ajoy Das" testname = "Sunny Khan"></Carousel>
                     </article>
                 </section>
             </div>

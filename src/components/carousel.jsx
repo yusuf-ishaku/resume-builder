@@ -6,7 +6,7 @@ import 'swiper/css';
 
 import { Autoplay, Pagination} from "swiper";
 import Sunny from "../assets/sunny.jpg"
-export const Carousel = () =>{
+export const Carousel = (props) =>{
     return (
         <Swiper
         //   spaceBetween={50}
@@ -16,6 +16,8 @@ export const Carousel = () =>{
         spaceBetween={40}
         slidesPerView={3}
         // centeredSlides={true}
+        grabCursor={true}
+        loop={true}
         autoplay={{
           delay: 3000,
           disableOnInteraction: true,
@@ -28,21 +30,53 @@ export const Carousel = () =>{
           className = "mySwiper"
         >
           <SwiperSlide>
-            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 w-auto h-[400px]">
+            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 w-auto h-[450px]">
                 <figure className="w-32 h-32 rounded-full mt-10">
-                    <img className="object-fit rounded-full" src={Sunny} alt="" />
+                    <img className="object-fit rounded-full" src={props.image} alt="" />
                 </figure>
-                <article className="mx-5 text-gray-600 font-black w-auto text-center">
-                    <p>
+                <article className="mx-5 pt-5 text-gray-500 text-md font-black w-auto text-center">
+                    <p className="py-2 leading-7">
                     Lorem ipsum dolor sit amet, consecte adipiscing elit. Nulla neque quam, maxim us ut accumsan ut, posuere sit Lorem ipsum adipiscing elit.
                     </p>
                 </article>
+                <h2 className="text-blue-900 font-black text-2xl">
+                    {props.testname}
+                </h2>
+                <h3 className="my-3 font-bold text-gray-600 text-lg">One of our clients</h3>
             </div>
           </SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          ...
+          <SwiperSlide> 
+            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 w-auto h-[450px]">
+                <figure className="w-32 h-32 rounded-full mt-10">
+                    <img className="object-fit rounded-full" src={props.image2} alt="" />
+                </figure>
+                <article className="mx-5 pt-5 text-gray-500 text-md font-black w-auto text-center">
+                    <p className="py-2 leading-7">
+                    Lorem ipsum dolor sit amet, consecte adipiscing elit. Nulla neque quam, maxim us ut accumsan ut, posuere sit Lorem ipsum adipiscing elit.
+                    </p>
+                </article>
+                <h2 className="text-blue-900 font-black text-2xl">
+                    {props.testname2}
+                </h2>
+                <h3 className="my-3 font-bold text-gray-600 text-lg">One of our clients</h3>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 w-auto h-[450px]">
+                <figure className="w-32 h-32 rounded-full mt-10">
+                    <img className="object-fit rounded-full" src={props.image3} alt="" />
+                </figure>
+                <article className="mx-5 pt-5 text-gray-500 text-md font-black w-auto text-center">
+                    <p className="py-2 leading-7">
+                    Lorem ipsum dolor sit amet, consecte adipiscing elit. Nulla neque quam, maxim us ut accumsan ut, posuere sit Lorem ipsum adipiscing elit.
+                    </p>
+                </article>
+                <h2 className="text-blue-900 font-black text-2xl">
+                    {props.testname3}
+                </h2>
+                <h3 className="my-3 font-bold text-gray-600 text-lg">One of our clients</h3>
+            </div>
+          </SwiperSlide>
         </Swiper>
       );
 }
