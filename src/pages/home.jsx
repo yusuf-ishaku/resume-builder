@@ -180,7 +180,7 @@ export const Home = () =>{
                         <Desc img={F6} header="Fast Easy CV and Resume Formatting" text="Lorem ipsum dolor sit amet, consecte adipiscing elit. Nulla neque quam, maxim us ut accumsan ut, posuere sit Lorem ipsum adipiscing elit."></Desc>
                     </section>
                 </section>
-                <section className="px-32 py-32 h-[90vh]">
+                <section className="px-32 mb-60 py-32 h-[90vh]">
                     <header className="text-center">
                         <h2 className="text-blue-900 text-4xl font-extrabold">Your Success, Our inspiration</h2>
                         <article className="mx-56 mt-6 px-16 w-auto">
@@ -189,10 +189,82 @@ export const Home = () =>{
                             </p>
                         </article>
                     </header>
-                    <article className="my-20">
+                    <article className="my-20 mb-10 pb-10">
                         <Carousel image3 ={Jebin} testname3 ="Jebin Khan" image={Sunny} image2 = {Ajoy} testname2="Ajoy Das" testname = "Sunny Khan"></Carousel>
                     </article>
                 </section>
+                <footer className="w-full flex py-5 text-white justify-between px-20 flex-row gap-8 h-80 bg-blue-900">
+                    <section className="w-[25%]">
+                        <header className="font-semibold text-xl my-3">CV Builder</header>
+                        <article className="mt-5">
+                            <p className="leading-6">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus voluptatibus neque illo id repellat quisquam? Autem expedita earum quae laborum ipsum ad.
+                            </p>
+                           
+                        </article>
+                        <figure className="flex flex-row">
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                        </figure>
+                    </section>
+                    <section  className="w-[25%]">
+                        <header className="uppercase font-semibold text-md my-3">Privacy and TOS</header>
+                        <article>
+                            <span className="block text-gray-300 hover:text-white">Advertiser Agreement</span>
+                            <span className="block text-gray-300 hover:text-white">Acceptable Use Policy</span>
+                            <span className="block text-gray-300 hover:text-white">Privacy Policy</span>
+                            <span className="block text-gray-300 hover:text-white">Technology Privacy</span>
+                            <span className="block text-gray-300 hover:text-white">Developer Agreement</span>          
+                        </article>
+                        <figure className="flex flex-row">
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                        </figure>
+                    </section>
+                    <section  className="w-[20%]">
+                        <header className="uppercase font-semibold text-md my-3">Navigate</header>
+                        <article>
+                            <span className="block text-gray-300 hover:text-white">Advertisers</span>
+                            <span className="block text-gray-300 hover:text-white">Developers</span>
+                            <span className="block text-gray-300 hover:text-white">Resources</span>
+                            <span className="block text-gray-300 hover:text-white">Company</span>
+                            <span className="block text-gray-300 hover:text-white">Connect</span>          
+                        </article>
+                        <figure className="flex flex-row">
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                        </figure>
+                    </section>
+                    <section  className="w-[25%]">
+                        <header className="uppercase font-semibold text-md my-3">Contact Us</header>
+                        <article>
+                            <p className="text-left text-white">
+                                Mailing Address:xx00 E. Union Ave
+
+                                Suite 1100. Denver, CO 80237
+
+                                +999 90932 627
+
+                                support@yourdomain.com</p>         
+                        </article>
+                        <figure className="flex flex-row">
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                            <span>e</span>
+                        </figure>
+                    </section>
+                </footer>
             </div>
         </>
     )
