@@ -11,7 +11,8 @@ import F2 from "../assets/f2.png";
 import F3 from "../assets/f3.png";
 import F4 from "../assets/f4.png";
 import F5 from "../assets/f5.png";
-import F6 from "../assets/f6.png"
+import F6 from "../assets/f6.png";
+import {Carousel} from "../components/carousel";
 export const Home = () =>{
     return(
         <>
@@ -177,7 +178,7 @@ export const Home = () =>{
                     </section>
                 </section>
                 <section className="px-32 py-32 h-[90vh]">
-                <header className="text-center">
+                    <header className="text-center">
                         <h2 className="text-blue-900 text-4xl font-extrabold">Your Success, Our inspiration</h2>
                         <article className="mx-56 mt-6 px-16 w-auto">
                             <p className="text-xl text-slate-600 font-medium  leading-8">
@@ -185,6 +186,9 @@ export const Home = () =>{
                             </p>
                         </article>
                     </header>
+                    <article className="my-20">
+                        <Carousel></Carousel>
+                    </article>
                 </section>
             </div>
         </>
