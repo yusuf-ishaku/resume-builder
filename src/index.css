@@ -35,4 +35,18 @@
   .border-3{
     border-width: 3px;
   }
+  .stylin{
+    transition: color 1s, font-weight 1.6s;
+  }
+  .stylin:hover{
+    color: rgb(2, 2, 102);
+    font-weight: bolder;
+  }
+  .st{
+    transition: border-width 1s, border-color 1s;
+  }
+  .st:hover{
+    border-width: 3px;
+    border-color: rgb(117, 3, 3);
+  }
 }
