@@ -10,7 +10,6 @@ export const Navbar = () =>{
                 </header>
                 <Link to="/" className="uppercase mx-4 font-bold hover:text-blue-600">HOME</Link>
                 <Link to="/about" className="uppercase mx-4 font-bold hover:text-blue-600">about us</Link>
-                <Link to="/pricing" className="uppercase mx-4 font-bold hover:text-blue-600">pricing</Link>
                 <Link to="/templates" className="uppercase mx-4 font-bold hover:text-blue-600">templates</Link>
                 <Link to="contact" className="uppercase mx-4 font-bold hover:text-blue-600">contact</Link>
                 <Link className="uppercase mx-4 font-light ">

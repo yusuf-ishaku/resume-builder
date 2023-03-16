@@ -7,7 +7,8 @@ module.exports = {
     "./src/pages/home.jsx",
     "./src/components/navbar.jsx",
     "./src/components/desc.jsx",
-    "./src/components/carousel.jsx"
+    "./src/components/carousel.jsx",
+    "./src/components/color-line.jsx"
   ],
   theme: {
     extend: {},

@@ -16,6 +16,13 @@ import {Carousel} from "../components/carousel";
 import Sunny from "../assets/sunny.jpg";
 import Ajoy from "../assets/ajoy.jpg";
 import Jebin from "../assets/jebin.jpg"
+import { ColorLine } from "../components/color-line";
+import { GrFacebookOption, GrGoogle, GrInstagram } from "react-icons/gr";
+import { BsTwitter } from "react-icons/bs";
+import { AiOutlineGooglePlus } from "react-icons/ai";
+import { RxInstagramLogo } from "react-icons/rx";
+import { GrLinkedinOption} from "react-icons/gr";
+import { IconContext  } from "react-icons/lib";
 export const Home = () =>{
     return(
         <>
@@ -83,7 +90,10 @@ export const Home = () =>{
                             </div>
                         </section>
                         <section className="w-1/2 px-4">
-                            <header className="text-4xl font-extrabold text-blue-900">Why choose our platform?</header>
+                            <header className="text-4xl font-extrabold text-blue-900">
+                                <ColorLine></ColorLine>
+                                Why choose our platform?
+                            </header>
                             <article className="my-4 text-lg text-gray-700 leading-8">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at dictum risus, non suscipit arcu. Quisque aliquam posuere tortor, sit amet convallis nunc scelerisque in.
                             </article>
@@ -97,6 +107,7 @@ export const Home = () =>{
                 <section className="w-full flex flex-row justify-between items-center h-[90vh] px-32 py-28">
                     <article className="w-1/2 flex flex-col justify-center">
                         <header className="text-blue-900 font-extrabold  text-4xl ">
+                            <ColorLine></ColorLine>
                             We deliver the best
                         </header>
                         <section className="py-6">
@@ -126,7 +137,8 @@ export const Home = () =>{
                     </button>
                 </section>
                 <section className="mt-28 mb-20 pt-28 pb-32 h-fit px-32 bg-blue-100">
-                    <header className="text-center">
+                    <header className="text-center flex flex-col items-center">
+                        <ColorLine></ColorLine>
                         <h2 className="text-blue-900 font-bold text-4xl">Our Creative Templates</h2>
                         <p className="text-xl mx-48 my-4 font-medium leading-8">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -163,7 +175,8 @@ export const Home = () =>{
                     </section>
                 </section>
                 <section className="w-full h-auto mt-24 mb-60">
-                    <header className="text-center">
+                    <header className="text-center flex flex-col items-center">
+                        <ColorLine></ColorLine>
                         <h2 className="text-blue-900 text-4xl font-extrabold">Our Main Features</h2>
                         <article className="mx-56 px-16 w-auto">
                             <p className="text-xl text-slate-600  leading-8">
@@ -180,8 +193,9 @@ export const Home = () =>{
                         <Desc img={F6} header="Fast Easy CV and Resume Formatting" text="Lorem ipsum dolor sit amet, consecte adipiscing elit. Nulla neque quam, maxim us ut accumsan ut, posuere sit Lorem ipsum adipiscing elit."></Desc>
                     </section>
                 </section>
-                <section className="px-32 mb-60 py-32 h-[90vh]">
-                    <header className="text-center">
+                <section className="block px-32 mb-80 py-32 h-[90vh]">
+                    <header className="text-center flex flex-col items-center">
+                        <ColorLine></ColorLine>
                         <h2 className="text-blue-900 text-4xl font-extrabold">Your Success, Our inspiration</h2>
                         <article className="mx-56 mt-6 px-16 w-auto">
                             <p className="text-xl text-slate-600 font-medium  leading-8">
@@ -202,12 +216,25 @@ export const Home = () =>{
                             </p>
                            
                         </article>
-                        <figure className="flex flex-row">
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
+                        <figure className="flex flex-row gap-4 my-4">
+                            <IconContext.Provider value={{color: "white", size: 18}}>
+                                <span>
+                                    <GrFacebookOption></GrFacebookOption>
+                                </span>
+                                <span>
+                                    <BsTwitter></BsTwitter>
+                                </span>
+                                <span>
+                                    <AiOutlineGooglePlus></AiOutlineGooglePlus>
+                                </span>
+                                <span>
+                                    <GrInstagram></GrInstagram>
+                                </span>
+                                <span>
+                                    <GrLinkedinOption></GrLinkedinOption>
+                                </span>
+                            </IconContext.Provider>
+                           
                         </figure>
                     </section>
                     <section  className="w-[25%]">
@@ -219,13 +246,6 @@ export const Home = () =>{
                             <span className="block text-gray-300 hover:text-white">Technology Privacy</span>
                             <span className="block text-gray-300 hover:text-white">Developer Agreement</span>          
                         </article>
-                        <figure className="flex flex-row">
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                        </figure>
                     </section>
                     <section  className="w-[20%]">
                         <header className="uppercase font-semibold text-md my-3">Navigate</header>
@@ -236,13 +256,6 @@ export const Home = () =>{
                             <span className="block text-gray-300 hover:text-white">Company</span>
                             <span className="block text-gray-300 hover:text-white">Connect</span>          
                         </article>
-                        <figure className="flex flex-row">
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                        </figure>
                     </section>
                     <section  className="w-[25%]">
                         <header className="uppercase font-semibold text-md my-3">Contact Us</header>
@@ -256,13 +269,6 @@ export const Home = () =>{
 
                                 support@yourdomain.com</p>         
                         </article>
-                        <figure className="flex flex-row">
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                            <span>e</span>
-                        </figure>
                     </section>
                 </footer>
             </div>
