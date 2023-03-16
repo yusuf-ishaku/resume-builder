@@ -1,7 +1,7 @@
 export const Desc = (props)=>{
     return(
         <>
-            <div className="w-full p-6 flex flex-col items-center h-[350px] rounded-2xl drop-shadow-2xl bg-white">
+            <div className="w-full p-6 flex flex-col items-center h-[380px] rounded-2xl drop-shadow-2xl bg-white">
                 <figure>
                     <img src={props.img} alt="" />
                 </figure>
