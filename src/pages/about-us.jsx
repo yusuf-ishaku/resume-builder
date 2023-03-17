@@ -94,6 +94,7 @@ export const About = () =>{
                         Send a request
                     </button>
                 </section></>}></LinkPaths>
+                
         </>
     )
 }

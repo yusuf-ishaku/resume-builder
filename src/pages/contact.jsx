@@ -1,7 +1,20 @@
+import { LinkPaths } from "../components/linkpaths"
+import { useContext, useEffect } from "react";
+import { AppContext } from "../App";
+import { ColorLine } from "../components/color-line";
+
 export const Contact = () =>{
+    const {fly, setFly} = useContext(AppContext);
+    useEffect(() =>{
+        setFly(true)
+        console.log(fly)
+    })
     return(
         <>
-            This is contact
+            <LinkPaths tag="Contact Us" inner = {<>
+            <ColorLine></ColorLine>
+                </>}></LinkPaths>
+                
         </>
     )
 }
