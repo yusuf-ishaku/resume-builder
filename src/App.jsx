@@ -14,23 +14,30 @@ import { Contact } from './pages/contact';
 import { Pricing } from './pages/pricing';
 import { Templates } from './pages/templates';
 import { About } from './pages/about-us';
+import { createContext} from "react";
+
+export const AppContext = createContext();
 function App() {
+  const [fly, setFly] = useState(true);
+
   return (
     <div className="App">
-      <Router>
-        <Navbar></Navbar>
-        <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path='/contact' element={<Contact></Contact>}></Route>
-          <Route path='/pricing' element={<Pricing></Pricing>}></Route>
-          <Route path='/templates' element={<Templates></Templates>}></Route>
-          <Route path='/about' element={<About></About>}></Route>
-          <Route></Route>
-          <Route></Route>
-          <Route></Route>
-          <Route></Route>
-        </Routes>
-      </Router>
+      <AppContext.Provider value={{fly, setFly}}>
+        <Router>
+          <Navbar></Navbar>
+          <Routes>
+            <Route path="/" element={<Home/>}></Route>
+            <Route path='/contact' element={<Contact></Contact>}></Route>
+            <Route path='/pricing' element={<Pricing></Pricing>}></Route>
+            <Route path='/templates' element={<Templates></Templates>}></Route>
+            <Route path='/about' element={<About></About>}></Route>
+            <Route></Route>
+            <Route></Route>
+            <Route></Route>
+            <Route></Route>
+          </Routes>
+        </Router>
+      </AppContext.Provider>
     </div>
   )
 }

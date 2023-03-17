@@ -23,7 +23,14 @@ import { AiOutlineGooglePlus } from "react-icons/ai";
 import { RxInstagramLogo } from "react-icons/rx";
 import { GrLinkedinOption} from "react-icons/gr";
 import { IconContext  } from "react-icons/lib";
+import { useContext, useEffect } from "react";
+import { AppContext } from "../App";
 export const Home = () =>{
+    const {fly, setFly} = useContext(AppContext)
+    useEffect(() =>{
+        setFly(false)
+        console.log(fly)
+    })
     return(
         <>
             <div className="w-full ">

@@ -1,10 +1,13 @@
-import { Link } from "react-router-dom"
-
+import { Link } from "react-router-dom";
+import { useState, useEffect, useContext} from "react";
+import { AppContext } from "../App";
 
 export const Navbar = () =>{
+    const { fly, setFly} = useContext(AppContext)
+   
     return(
         <>
-            <nav className="w-full h-16 flex flex-row items-center px-32 bg-slate-100">
+            <nav className={fly ? "w-full z-50 h-16 flex flex-row items-center text-white px-32 absolute bg-transparent": "w-full z-50 h-16 flex relative flex-row items-center px-32 bg-blue-100"}>
                 <header className="uppercase font-semibold text-xl mr-auto">
                     <Link to="/">Resume builder</Link>
                 </header>
