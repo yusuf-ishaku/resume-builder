@@ -12,6 +12,8 @@ import F3 from "../assets/f3.png";
 import F4 from "../assets/f4.png";
 import F5 from "../assets/f5.png";
 import F6 from "../assets/f6.png";
+import T1 from "../assets/demo-1.png";
+import { Link } from "react-router-dom";
 import {Carousel} from "../components/carousel";
 import Sunny from "../assets/sunny.jpg";
 import Ajoy from "../assets/ajoy.jpg";
@@ -153,8 +155,8 @@ export const Home = () =>{
                     </header>
                     <section className="w-full flex flex-row items-center justify-between">
                         <div className="flex flex-col h-[500px] st  bg-white drop-shadow-xl border-white md:w-[30%] border-6">
-                            <div className="bg-red-900 cursor-pointer h-[82%]">
-
+                            <div className="bg-red-900  h-[82%]">
+                                <img src={T1} alt="" />
                             </div>
                             <div className="h-[18%] px-4 flex flex-row items-center justify-between">
                                 <button className="stylin border-blue-600 p-2 px-2 text-white text-lg rounded-3xl bg-blue-600">See template</button>
@@ -163,7 +165,7 @@ export const Home = () =>{
                         </div>
                         <div className="flex flex-col st h-[500px] md:w-[30%] border-white drop-shadow-xl bg-white w-auto border-6">
                             <div className="bg-red-900 cursor-pointer h-[82%]">
-
+                               
                             </div>
                             <div className="h-[18%] px-4 flex flex-row items-center justify-between">
                                 <button className="stylin border-blue-600 p-2 px-2 text-white text-md rounded-3xl bg-blue-600">See template</button>
