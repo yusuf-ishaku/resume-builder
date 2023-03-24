@@ -30,7 +30,7 @@ import { AppContext } from "../App";
 export const Home = () =>{
     const {fly, setFly} = useContext(AppContext)
     useEffect(() =>{
-        setFly(false)
+        setFly("w-full z-50 h-16 flex relative flex-row items-center px-32 bg-blue-100")
         console.log(fly)
     })
     return(

@@ -19,7 +19,7 @@ import { createContext} from "react";
 
 export const AppContext = createContext();
 function App() {
-  const [fly, setFly] = useState(true);
+  const [fly, setFly] = useState("w-full z-50 h-16 flex relative flex-row items-center px-32 bg-blue-100");
 
   return (
     <div className="App">
