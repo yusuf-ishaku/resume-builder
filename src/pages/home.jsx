@@ -160,7 +160,7 @@ export const Home = () =>{
                             </div>
                             <div className="h-[18%] px-4 flex flex-row items-center justify-between">
                                 <button className="stylin border-blue-600 p-2 px-2 text-white text-lg rounded-3xl bg-blue-600">See template</button>
-                                <button className="stylin border-blue-600 border-2 border-3 text-lg p-2 px-2 rounded-3xl bg-white">Use Template</button>
+                                <Link to="/template1"><button className="stylin border-blue-600 border-2 border-3 text-lg p-2 px-2 rounded-3xl bg-white">Use Template</button></Link>
                             </div>
                         </div>
                         <div className="flex flex-col st h-[500px] md:w-[30%] border-white drop-shadow-xl bg-white w-auto border-6">

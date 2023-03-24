@@ -14,6 +14,7 @@ import { Contact } from './pages/contact';
 import { Pricing } from './pages/pricing';
 import { Templates } from './pages/templates';
 import { About } from './pages/about-us';
+import { T1 } from './pages/t1';
 import { createContext} from "react";
 
 export const AppContext = createContext();
@@ -31,7 +32,7 @@ function App() {
             <Route path='/pricing' element={<Pricing></Pricing>}></Route>
             <Route path='/templates' element={<Templates></Templates>}></Route>
             <Route path='/about' element={<About></About>}></Route>
-            <Route></Route>
+            <Route path='/template1' element={<T1></T1>}></Route>
             <Route></Route>
             <Route></Route>
             <Route></Route>

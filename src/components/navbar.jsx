@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect, useContext} from "react";
 import { AppContext } from "../App";
 
-export const Navbar = () =>{
+export const Navbar = (props) =>{
     const { fly, setFly} = useContext(AppContext)
    
     return(
