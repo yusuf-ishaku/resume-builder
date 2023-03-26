@@ -22,7 +22,7 @@ export const T1 = () =>{
                                 <h2 className="text-gray-700 font-semibold text-md uppercase">{"Web Developer"}</h2>
                             </span>
                             <div className="flex flex-col gap-4 p-2">
-                                <div className="flex flex-row  items-center text-blue-600">
+                                <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-10 mr-3 h-10 rounded-full flex flex-row items-center justify-center bg-white">
                                         <MdLocationOn></MdLocationOn>
                                     </span>
