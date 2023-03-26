@@ -2,7 +2,10 @@ import "../App.css";
 import { useContext, useEffect } from "react";
 import { AppContext } from "../App";
 import Ajoy from "../assets/ajoy.jpg"; 
-import {MdLocationOn } from "react-icons/md"
+import {MdLocationOn } from "react-icons/md";
+import { MdLocalPhone} from "react-icons/md";
+import { MdEmail } from "react-icons/md";
+import { RxGlobe } from "react-icons/rx";
 export const T1 = () =>{
    const {fly, setFly} = useContext(AppContext);
    useEffect(()=>{
@@ -23,10 +26,89 @@ export const T1 = () =>{
                             </span>
                             <div className="flex flex-col gap-4 p-2">
                                 <div className="flex flex-row  items-center text-blue-400">
-                                    <span className="w-10 mr-3 h-10 rounded-full flex flex-row items-center justify-center bg-white">
+                                    <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
                                         <MdLocationOn></MdLocationOn>
                                     </span>
                                     <h1 className="text-white">21 Street, Texas USA</h1>
+                                </div>
+                                <div className="flex flex-row  items-center text-blue-400">
+                                    <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
+                                        <MdLocalPhone></MdLocalPhone>
+                                    </span>
+                                    <h1 className="text-white">+234-816-173-6593</h1>
+                                </div>
+                                <div className="flex flex-row  items-center text-blue-400">
+                                    <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
+                                        <MdEmail></MdEmail>
+                                    </span>
+                                    <h1 className="text-white">example@example.com</h1>
+                                </div>
+                                <div className="flex flex-row  items-center text-blue-400">
+                                    <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
+                                        <RxGlobe></RxGlobe>
+                                    </span>
+                                    <h1 className="text-white">www.yourdomain.com</h1>
+                                </div>
+                            </div>
+                            <hr className="mx-2"></hr>
+                            <span className="block pt-2 px-1 pl-2">
+                                <h1 className="text-white font-semibold text-lg uppercase">{"Skills"}</h1>
+                            </span>
+                            <div className="flex flex-col gap-0 p-2">
+                                <div className="flex flex-row  items-center text-blue-400">
+                                    <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
+                                        HTML
+                                    </span>
+                                    <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
+                                        <span className="bg-white h-[0.35rem] w-[70%]"></span>
+                                    </span>
+                                    <span className="text-white text-xs ml-2">
+                                        70%
+                                    </span>
+                                </div>
+                                <div className="flex flex-row  items-center text-blue-400">
+                                    <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
+                                        CSS
+                                    </span>
+                                    <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
+                                        <span className="bg-white h-[0.35rem] w-[50%]"></span>
+                                    </span>
+                                    <span className="text-white text-xs ml-2">
+                                        50%
+                                    </span>
+                                </div>
+                                <div className="flex flex-row  items-center text-blue-400">
+                                    <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
+                                        JS
+                                    </span>
+                                    <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
+                                        <span className="bg-white h-[0.35rem] w-[60%]"></span>
+                                    </span>
+                                    <span className="text-white text-xs ml-2">
+                                        60%
+                                    </span>
+                                </div>
+                                <div className="flex flex-row  items-center text-blue-400">
+                                    <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
+                                        JQuery
+                                    </span>
+                                    <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
+                                        <span className="bg-white h-[0.35rem] w-[90%]"></span>
+                                    </span>
+                                    <span className="text-white text-xs ml-2">
+                                        90%
+                                    </span>
+                                </div>
+                                <div className="flex flex-row  items-center text-blue-400">
+                                    <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
+                                        SASS
+                                    </span>
+                                    <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
+                                        <span className="bg-white h-[0.35rem] w-[75%]"></span>
+                                    </span>
+                                    <span className="text-white text-xs ml-2">
+                                        75%
+                                    </span>
                                 </div>
                             </div>
                         </section>
