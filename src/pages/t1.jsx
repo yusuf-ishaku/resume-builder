@@ -24,8 +24,8 @@ export const T1 = () =>{
 
                     ></DocSide1>
                 </section>
-                <section className="w-[55%] pl-4 h-auto">
-                    <section className="bg-white border-l-4 drop-shadow-md p-3 border-blue-600 flex flex-row">
+                <section className="w-[55%] pl-4 pb-5 h-auto">
+                    <section className="fixed z-50 bg-white border-l-4 drop-shadow-md p-3 border-blue-600 flex flex-row">
                         <div className="text-sm w-[70%]">
                             <p >Fill all required fields and click download CV to get started. Where fields are not adequate, fill in with your most outstanding/most recent accomplishments.</p>
                         </div>
@@ -33,7 +33,7 @@ export const T1 = () =>{
                         <button className="w-fit flex flex-row mx-4 items-center justify-center px-4 rounded-md text-white h-10 bg-blue-600">Download CV</button>
                        
                     </section>
-                    <header className="p-4">
+                    <header className="p-4 pt-24">
                         <h1 className="text-blue-600 text-2xl font-semibold">Personal Info</h1>
                     </header>
                     <div className="bg-white drop-shadow-md p-4 grid grid-cols-2 gap-3">
@@ -65,6 +65,80 @@ export const T1 = () =>{
                             <label htmlFor="bio">Your bio:</label>
                             <textarea name="bio" placeholder="Bio" id="bio" cols="30" rows="10" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"></textarea>
                         </div>
+                    </div>
+                    <header className="p-4 pt-24">
+                        <h1 className="text-blue-600 text-2xl font-semibold">Add Education</h1>
+                    </header>
+                    <div className="bg-white drop-shadow-md p-4 flex flex-col gap-3" >
+                        <div className="flex flex-col">
+                            <label htmlFor="degree">Degree:</label>
+                            <input type="text" placeholder="E.g BSc., B.Eng." className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="school">School:</label>
+                            <input type="text" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="start">Start:</label>
+                            <input type="text" placeholder="Enter your address" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="finish">Finish:</label>
+                            <input type="text" placeholder="Enter your email" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Education</button>
+                    </div>
+                    <header className="p-4 pt-24">
+                        <h1 className="text-blue-600 text-2xl font-semibold">Add Experience</h1>
+                    </header>
+                    <div className="bg-white drop-shadow-md p-4 flex flex-col gap-3" >
+                        <div className="flex flex-col">
+                            <label htmlFor="title">Title</label>
+                            <input type="text" placeholder="E.g BSc., B.Eng." className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="company">Company:</label>
+                            <input type="text" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="start">Start:</label>
+                            <input type="text" placeholder="Enter your address" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="finish">Finish:</label>
+                            <input type="text" placeholder="Enter your email" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Another Experience</button>
+                    </div>
+                    <header className="p-4 pt-24">
+                        <h1 className="text-blue-600 text-2xl font-semibold">Add Skills</h1>
+                    </header>
+                    <div className="bg-white drop-shadow-md p-4 flex flex-col gap-3" >
+                        <div className="flex flex-col">
+                            <label htmlFor="skill">Skill:</label>
+                            <input type="text" placeholder="E.g BSc., B.Eng." className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="school">Proficiency:</label>
+                            <input type="text" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                       
+                        <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Another Skill</button>
+                    </div>
+                    <header className="p-4 pt-24">
+                        <h1 className="text-blue-600 text-2xl font-semibold">Add Socials</h1>
+                    </header>
+                    <div className="bg-white drop-shadow-md p-4 flex flex-col gap-3" >
+                        <div className="flex flex-col">
+                            <label htmlFor="skill">Social Network:</label>
+                            <input type="text" placeholder="E.g BSc., B.Eng." className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                        <div className="flex flex-col">
+                            <label htmlFor="school">Social Link</label>
+                            <input type="text" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                        </div>
+                       
+                        <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Another Social</button>
                     </div>
                 </section>
             </section>
