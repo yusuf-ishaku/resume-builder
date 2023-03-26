@@ -184,7 +184,7 @@ export const T1 = () =>{
                                             <div className="w-3 h-3 flex flex-row items-center justify-center rounded-full bg-blue-400">
                                                 <div className="w-2 h-2 rounded-full bg-white"></div>
                                             </div>
-                                            <div className="w-[0.2rem] h-full relative bg-blue-400"></div>
+                                            <div className="w-[0.2rem] h-[10rem] bg-blue-400"></div>
                                         </div>
                                         <div>
                                             <header className="text-gray-800 text-sm font-semibold mb-3">
@@ -200,12 +200,33 @@ export const T1 = () =>{
                                             </article>
                                         </div>
                                     </section>
-                                    <section className="flex flex-row ">
+                                    <section className="flex flex-row pt-2 relative -top-[4rem]">
                                         <div className="flex flex-col items-center justify-center mt-1 mr-2">
                                             <div className="w-3 h-3 flex flex-row items-center justify-center rounded-full bg-blue-400">
                                                 <div className="w-2 h-2 rounded-full bg-white"></div>
                                             </div>
-                                            <div className="w-[0.2rem] h-full bg-blue-400"></div>
+                                            <div className="w-[0.2rem] h-[10rem] bg-blue-400"></div>
+                                        </div>
+                                        <div>
+                                            <header className="text-gray-800 text-sm font-semibold mb-3">
+                                                <h1>2019-2020</h1>
+                                            </header>
+                                            <article>
+                                                <header>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">Lorem ipsum dolor sit amet.</h1>
+                                                </header>
+                                                <p className="text-gray-600 text-xs font-medium">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                                                </p>
+                                            </article>
+                                        </div>
+                                    </section>
+                                    <section className="flex flex-row pt-2 relative -top-[8rem]">
+                                        <div className="flex flex-col items-center justify-center mt-1 mr-2">
+                                            <div className="w-3 h-3 flex flex-row items-center justify-center rounded-full bg-blue-400">
+                                                <div className="w-2 h-2 rounded-full bg-white"></div>
+                                            </div>
+                                            <div className="w-[0.2rem] h-[5.5rem] bg-blue-400"></div>
                                         </div>
                                         <div>
                                             <header className="text-gray-800 text-sm font-semibold mb-3">
