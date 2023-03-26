@@ -1,5 +1,5 @@
 import "../App.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext,createContext, useEffect, useState } from "react";
 import { AppContext } from "../App";
 import Ajoy from "../assets/ajoy.jpg"; 
 import {MdLocationOn } from "react-icons/md";
@@ -11,18 +11,28 @@ import { RiTwitterFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
 import { RiLinkedinFill } from "react-icons/ri"
 import { DocSide1 } from "../components/t1pdf";
+export const UserInputs = createContext();
 export const T1 = () =>{
    const {fly, setFly} = useContext(AppContext);
    useEffect(()=>{
     setFly("hidden w-full z-50 h-16 flex flex-row items-center text-white px-32 absolute bg-transparent")
    })
+   const [fName, setFname] = useState("Stephen Col");
+   const [title, setTitle ] = useState("Web Developer");
+   const [address, setAddress] = useState("21, Texas Street, USA");
+   const [email, setEmail] = useState("example@example.com");
+   const [weblink, setWeblink] = useState("yourname.com");
+   const [phoneNumber, setPhoneNumber] = useState("+234-816-173-6593")
     return(
         <>
             <section className="w-full flex flex-row relative">
                 <section className="w-[45%] bg-gray-500 h-fit p-6">
-                    <DocSide1
+                    <UserInputs.Provider value={{fName, title, address, email, weblink, phoneNumber}}>
+                        <DocSide1
 
-                    ></DocSide1>
+                        ></DocSide1>
+                    </UserInputs.Provider>
+                    
                 </section>
                 <section className="w-[55%] pl-4 pb-5 h-auto">
                     <section className="fixed z-50 bg-white border-l-4 drop-shadow-md p-3 border-blue-600 flex flex-row">
@@ -39,27 +49,39 @@ export const T1 = () =>{
                     <div className="bg-white drop-shadow-md p-4 grid grid-cols-2 gap-3">
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Full Name:</label>
-                            <input type="text" placeholder="Enter full name" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                            <input type="text" placeholder="Enter full name" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" onChange={(e)=>{
+                                setFname(e.target.value)
+                            }} />
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Job Title:</label>
-                            <input type="text" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                            <input type="text" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" onChange={(e) =>{
+                                setTitle(e.target.value)
+                            }} />
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Your Address:</label>
-                            <input type="text" placeholder="Enter your address" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                            <input type="text" placeholder="Enter your address" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" onChange={(e) =>{
+                                setAddress(e.target.value)
+                            }}/>
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Your Email:</label>
-                            <input type="text" placeholder="Enter your email" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                            <input type="text" placeholder="Enter your email" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" onChange={(e) =>{
+                                setEmail(e.target.value)
+                            }} />
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Website Link:</label>
-                            <input type="text" placeholder="Enter your website link" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                            <input type="text" placeholder="Enter your website link" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" onChange={(e) =>{
+                                setWeblink(e.target.value)
+                            }} />
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Phone Number:</label>
-                            <input type="text" placeholder="Enter your phone number" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                            <input type="text" placeholder="Enter your phone number" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" onChange={(e) =>{
+                                setPhoneNumber(e.target.value)
+                            }} />
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="bio">Your bio:</label>

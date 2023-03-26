@@ -6,42 +6,46 @@ import { RxGlobe } from "react-icons/rx";
 import { MdFacebook} from "react-icons/md";
 import { RiTwitterFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
-import { RiLinkedinFill } from "react-icons/ri"
+import { RiLinkedinFill } from "react-icons/ri";
+import { useContext } from "react";
+import { UserInputs } from "../pages/t1";
 export const DocSide1 = () =>{
+    const {fName, title, address, email, weblink, phoneNumber} = useContext(UserInputs);
+
     return (
         <section className="bg-white w-auto h-fit flex flex-row">
                         <section className="w-[45%] bg-blue-400 h-fit">
                             <img src={Ajoy} alt=""></img>
                             <span className="block pt-2 px-1 pl-2">
-                                <h1 className="text-white font-semibold text-xl uppercase">{"Stephen Colbert"}</h1>
+                                <h1 className="text-white font-semibold text-xl uppercase">{fName}</h1>
                             </span>
                             <span className="block pt-1 px-1 pl-2">
-                                <h2 className="text-gray-700 font-semibold text-md uppercase">{"Web Developer"}</h2>
+                                <h2 className="text-gray-700 font-semibold text-md uppercase">{title}</h2>
                             </span>
                             <div className="flex flex-col gap-4 p-2 pl-4">
                                 <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
                                         <MdLocationOn></MdLocationOn>
                                     </span>
-                                    <h1 className="text-white">21 Street, Texas USA</h1>
+                                    <h1 className="text-white">{address}</h1>
                                 </div>
                                 <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
                                         <MdLocalPhone></MdLocalPhone>
                                     </span>
-                                    <h1 className="text-white text-sm">+234-816-173-6593</h1>
+                                    <h1 className="text-white text-sm">{phoneNumber}</h1>
                                 </div>
                                 <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
                                         <MdEmail></MdEmail>
                                     </span>
-                                    <h1 className="text-white text-sm">example@example.com</h1>
+                                    <h1 className="text-white text-sm">{email}</h1>
                                 </div>
                                 <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
                                         <RxGlobe></RxGlobe>
                                     </span>
-                                    <h1 className="text-white text-sm">www.yourdomain.com</h1>
+                                    <h1 className="text-white text-sm">{weblink}</h1>
                                 </div>
                             </div>
                             <hr className="mx-2 my-2"></hr>
