@@ -10,8 +10,7 @@ import { RiLinkedinFill } from "react-icons/ri";
 import { useContext } from "react";
 import { UserInputs } from "../App";
 export const DocSide1 = () =>{
-    const {fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
-
+    const {educations, setEducations,fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
     return (
         <section className="bg-white w-auto h-fit flex flex-row">
                         <section className="w-[45%] bg-blue-400 h-fit">
@@ -186,7 +185,7 @@ export const DocSide1 = () =>{
                                             </header>
                                             <article>
                                                 <header>
-                                                    <h1 className="text-gray-800 text-sm font-semibold">Lorem ipsum dolor sit amet.</h1>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">{educations[0].degree}</h1>
                                                 </header>
                                                 <p className="text-gray-600 text-xs font-medium">
                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -207,7 +206,7 @@ export const DocSide1 = () =>{
                                             </header>
                                             <article>
                                                 <header>
-                                                    <h1 className="text-gray-800 text-sm font-semibold">Lorem ipsum dolor sit amet.</h1>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">{educations[1].degree}</h1>
                                                 </header>
                                                 <p className="text-gray-600 text-xs font-medium">
                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
@@ -228,7 +227,7 @@ export const DocSide1 = () =>{
                                             </header>
                                             <article>
                                                 <header>
-                                                    <h1 className="text-gray-800 text-sm font-semibold">Lorem ipsum dolor sit amet.</h1>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">{educations[2].degree}</h1>
                                                 </header>
                                                 <p className="text-gray-600 text-xs font-medium">
                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua

@@ -26,14 +26,16 @@ export const T1 = () =>{
    const [weblink, setWeblink] = useState("yourname.com");
    const [phoneNumber, setPhoneNumber] = useState("+234-816-173-6593");
    const[bio, setBio] = useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
-//    const[count, setCount] = useState(1);
+   const[count, setCount] = useState(1);
+   const[educations, setEducations] = useState([{degree: "Lorem ipsum"}, { degree: "Lorem ipsum"}, { degree: "Lorem Ipsum"}])
   
     return(
         <>
             <section className="w-full flex flex-row relative">
                 <section className="w-[45%] bg-gray-500 h-fit p-6">
-                    <UserInputs.Provider value={{fName, title, address, email, weblink, phoneNumber, bio}}>
+                    <UserInputs.Provider value={{educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
                         <DocSide1></DocSide1>
+                        
                     </UserInputs.Provider>
                 </section>
                 <section className="w-[55%] pl-4 pb-5 h-auto">
@@ -94,8 +96,14 @@ export const T1 = () =>{
                         <h1 className="text-blue-600 text-2xl font-semibold">Add Education</h1>
                     </header>
                     <div className="bg-white drop-shadow-md p-4 flex flex-col gap-3" >
-                        <AddEducation></AddEducation>
-                        <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Education</button>
+                    <UserInputs.Provider value={{educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
+                        {<AddEducation no={0}></AddEducation>}
+                        {count > 1? <div className="my-10"><AddEducation no={1}></AddEducation></div>: <></>}
+                        {count > 2? <div className="my-10"><AddEducation no={2}></AddEducation></div> : <></>}
+                        
+                    </UserInputs.Provider>
+                      
+                        <button onClick={()=>setCount(count+1)} className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Education</button>
                     </div>
                     <header className="p-4 pt-24">
                         <h1 className="text-blue-600 text-2xl font-semibold">Add Experience</h1>
