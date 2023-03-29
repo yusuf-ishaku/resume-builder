@@ -198,6 +198,7 @@ export const DocSide1 = () =>{
                                             <div className="w-3 h-3 flex flex-row items-center justify-center rounded-full bg-blue-400">
                                                 <div className="w-2 h-2 rounded-full bg-white"></div>
                                             </div>
+                                            
                                             <div className="w-[0.2rem] h-[10rem] bg-blue-400"></div>
                                         </div>
                                         <div>
