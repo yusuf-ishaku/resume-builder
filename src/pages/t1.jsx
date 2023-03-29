@@ -27,7 +27,11 @@ export const T1 = () =>{
    const [phoneNumber, setPhoneNumber] = useState("+234-816-173-6593");
    const[bio, setBio] = useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
    const[count, setCount] = useState(1);
-   const[educations, setEducations] = useState([{degree: "Lorem ipsum"}, { degree: "Lorem ipsum"}, { degree: "Lorem Ipsum"}])
+   const[educations, setEducations] = useState([
+    {degree: "Lorem ipsum", startTime: 2019, endTime: 2021, school: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, 
+    { degree: "Lorem ipsum", startTime: 2019, endTime: 2021, school: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, 
+    { degree: "Lorem Ipsum", startTime: 2019, endTime: 2021, school: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}
+])
   
     return(
         <>
