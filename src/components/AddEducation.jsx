@@ -1,5 +1,4 @@
-
-export const Inputs = (props) =>{
+export const AddEducation = (props) =>{
     return(
         <>
 

@@ -11,8 +11,8 @@ import { RiTwitterFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
 import { RiLinkedinFill } from "react-icons/ri"
 import { DocSide1 } from "../components/t1pdf";
-// import { Input } from "";
-import { Inputs } from "../components/input";
+
+import { AddEducation } from "../components/AddEducation";
 export const UserInputs = createContext();
 export const T1 = () =>{
    const {fly, setFly} = useContext(AppContext);
@@ -25,16 +25,14 @@ export const T1 = () =>{
    const [email, setEmail] = useState("example@example.com");
    const [weblink, setWeblink] = useState("yourname.com");
    const [phoneNumber, setPhoneNumber] = useState("+234-816-173-6593");
-   const[count, setCount] = useState(1);
-   let hoop = <Inputs></Inputs>
+//    const[count, setCount] = useState(1);
+  
     return(
         <>
             <section className="w-full flex flex-row relative">
                 <section className="w-[45%] bg-gray-500 h-fit p-6">
                     <UserInputs.Provider value={{fName, title, address, email, weblink, phoneNumber}}>
-                        <DocSide1
-
-                        ></DocSide1>
+                        <DocSide1></DocSide1>
                     </UserInputs.Provider>
                     
                 </section>
@@ -96,9 +94,6 @@ export const T1 = () =>{
                         <h1 className="text-blue-600 text-2xl font-semibold">Add Education</h1>
                     </header>
                     <div className="bg-white drop-shadow-md p-4 flex flex-col gap-3" >
-                        
-                          <Inputs></Inputs>
-                       
                         <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Education</button>
                     </div>
                     <header className="p-4 pt-24">
