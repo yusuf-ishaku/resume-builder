@@ -257,14 +257,14 @@ export const DocSide1 = () =>{
                                         </div>
                                         <div>
                                             <header className="text-gray-800 text-sm font-semibold mb-3">
-                                                <h1>2019-2020</h1>
+                                                <h1>{educations[0].startTime}-{educations[0].endTime}</h1>
                                             </header>
                                             <article>
                                                 <header>
-                                                    <h1 className="text-gray-800 text-sm font-semibold">Lorem ipsum dolor sit amet.</h1>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">{educations[0].degree}</h1>
                                                 </header>
                                                 <p className="text-gray-600 text-xs font-medium">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                                                {educations[0].school}
                                                 </p>
                                             </article>
                                         </div>
@@ -278,14 +278,14 @@ export const DocSide1 = () =>{
                                         </div>
                                         <div>
                                             <header className="text-gray-800 text-sm font-semibold mb-3">
-                                                <h1>2019-2020</h1>
+                                                <h1>{educations[1].startTime}-{educations[1].endTime}</h1>
                                             </header>
                                             <article>
                                                 <header>
-                                                    <h1 className="text-gray-800 text-sm font-semibold">Lorem ipsum dolor sit amet.</h1>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">{educations[1].degree}</h1>
                                                 </header>
                                                 <p className="text-gray-600 text-xs font-medium">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                                                {educations[1].school}
                                                 </p>
                                             </article>
                                         </div>
@@ -299,14 +299,14 @@ export const DocSide1 = () =>{
                                         </div>
                                         <div>
                                             <header className="text-gray-800 text-sm font-semibold mb-3">
-                                                <h1>2019-2020</h1>
+                                                <h1>{educations[2].startTime}-{educations[2].endTime}</h1>
                                             </header>
                                             <article>
                                                 <header>
-                                                    <h1 className="text-gray-800 text-sm font-semibold">Lorem ipsum dolor sit amet.</h1>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">{educations[2].degree}</h1>
                                                 </header>
                                                 <p className="text-gray-600 text-xs font-medium">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                                                {educations[2].school}
                                                 </p>
                                             </article>
                                         </div>
