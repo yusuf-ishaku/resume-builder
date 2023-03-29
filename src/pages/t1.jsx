@@ -139,7 +139,7 @@ export const T1 = () =>{
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="school">Proficiency:</label>
-                            <input type="text" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                            <input type="range" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
                         </div>
                        
                         <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Another Skill</button>
