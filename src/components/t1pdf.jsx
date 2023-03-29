@@ -10,7 +10,7 @@ import { RiLinkedinFill } from "react-icons/ri";
 import { useContext } from "react";
 import { UserInputs } from "../App";
 export const DocSide1 = () =>{
-    const {experiences, setExperiences, educations, setEducations,fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
+    const {skills, setSkills, experiences, setExperiences, educations, setEducations,fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
     return (
         <section className="bg-white w-auto h-fit flex flex-row">
                         <section className="w-[45%] bg-blue-400 h-fit">
@@ -54,57 +54,57 @@ export const DocSide1 = () =>{
                             <div className="flex flex-col gap-0 p-2 pl-4">
                                 <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
-                                        HTML
+                                      {skills[0].skill}
                                     </span>
                                     <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
-                                        <span className="bg-white h-[0.35rem] w-[70%]"></span>
+                                        {<span  className="bg-white h-[0.35rem] w-[80%]"></span>}
                                     </span>
                                     <span className="text-white text-xs ml-2">
-                                        70%
+                                        {skills[0].range}%
                                     </span>
                                 </div>
                                 <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
-                                        CSS
+                                        {skills[1].skill}
                                     </span>
                                     <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
                                         <span className="bg-white h-[0.35rem] w-[50%]"></span>
                                     </span>
                                     <span className="text-white text-xs ml-2">
-                                        50%
+                                        {skills[1].range}%
                                     </span>
                                 </div>
                                 <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
-                                        JS
+                                        {skills[2].skill}
                                     </span>
                                     <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
                                         <span className="bg-white h-[0.35rem] w-[60%]"></span>
                                     </span>
                                     <span className="text-white text-xs ml-2">
-                                        60%
+                                        {skills[2].range}%
                                     </span>
                                 </div>
                                 <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
-                                        JQuery
+                                        {skills[3].skill}
                                     </span>
                                     <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
                                         <span className="bg-white h-[0.35rem] w-[90%]"></span>
                                     </span>
                                     <span className="text-white text-xs ml-2">
-                                        90%
+                                        {skills[3].range}%
                                     </span>
                                 </div>
                                 <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 text-xs mr-3 h-9 flex flex-row items-center justify-center text-white">
-                                        SASS
+                                        {skills[4].skill}
                                     </span>
                                     <span className="flex flex-row items-center j bg-blue-500 h-[0.35rem] w-full">
                                         <span className="bg-white h-[0.35rem] w-[75%]"></span>
                                     </span>
                                     <span className="text-white text-xs ml-2">
-                                        75%
+                                        {skills[4].range}%
                                     </span>
                                 </div>
                             </div>

@@ -15,6 +15,7 @@ import { DocSide1 } from "../components/t1pdf";
 import { AddEducation } from "../components/AddEducation";
 import { UserInputs } from "../App";
 import { AddExperience } from "../components/addExperience";
+import { SkillRange } from "../components/skillRange";
 export const T1 = () =>{
    const {fly, setFly} = useContext(AppContext);
    useEffect(()=>{
@@ -29,6 +30,8 @@ export const T1 = () =>{
    const[bio, setBio] = useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
    const[count, setCount] = useState(1);
    const [count2, setCount2] = useState(1);
+   const [range, setRange] = useState(50);
+   const [count3, setCount3] = useState(1);
    const[educations, setEducations] = useState([
     {degree: "Lorem ipsum", startTime: 2019, endTime: 2021, school: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, 
     { degree: "Lorem ipsum", startTime: 2019, endTime: 2021, school: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, 
@@ -41,14 +44,20 @@ export const T1 = () =>{
     }, {
         company: "Lorem Ipsum", startTime: 2019, endTime: 2021, title: "Web Developer: worked to convert great designs into resuable, scalable code"
     }]);
+    const [skills, setSkills] = useState([
+        {skill: "HTML", range: 70},
+        { skill: "CSS", range: 50},
+        { skill: "JS", range: 60},
+        { skill: "JQuery", range: 43},
+        { skill: "SASS", range: 75}
+    ])
   
     return(
         <>
             <section className="w-full flex flex-row relative">
                 <section className="w-[45%] bg-gray-500 h-fit p-6">
-                    <UserInputs.Provider value={{experiences, setExperiences, educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
+                    <UserInputs.Provider value={{skills, setSkills,experiences, setExperiences, educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
                         <DocSide1></DocSide1>
-                        
                     </UserInputs.Provider>
                 </section>
                 <section className="w-[55%] pl-4 pb-5 h-auto">
@@ -133,16 +142,15 @@ export const T1 = () =>{
                         <h1 className="text-blue-600 text-2xl font-semibold">Add Skills</h1>
                     </header>
                     <div className="bg-white drop-shadow-md p-4 flex flex-col gap-3" >
-                        <div className="flex flex-col">
-                            <label htmlFor="skill">Skill:</label>
-                            <input type="text" placeholder="E.g BSc., B.Eng." className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
-                        </div>
-                        <div className="flex flex-col">
-                            <label htmlFor="school">Proficiency:</label>
-                            <input type="range" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
-                        </div>
-                       
-                        <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Another Skill</button>
+                        <UserInputs.Provider value={{skills, setSkills, range, setRange}}>
+                            <SkillRange no = {0}></SkillRange>
+                            {count3 >1? <SkillRange no = {1}></SkillRange>: <></>}
+                            {count3 > 2? <SkillRange no = {2}></SkillRange> : <></>}
+                            {count3 > 3? <SkillRange no = {3}></SkillRange> : <></>}
+                            {count3 > 4? <SkillRange no = {4}></SkillRange> : <></>}
+                            
+                        </UserInputs.Provider>
+                        <button onClick={()=>setCount3(count3 + 1)} className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Another Skill</button>
                     </div>
                     <header className="p-4 pt-24">
                         <h1 className="text-blue-600 text-2xl font-semibold">Add Socials</h1>
