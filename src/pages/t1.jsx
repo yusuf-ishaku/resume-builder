@@ -11,6 +11,8 @@ import { RiTwitterFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
 import { RiLinkedinFill } from "react-icons/ri"
 import { DocSide1 } from "../components/t1pdf";
+// import { Input } from "";
+import { Inputs } from "../components/input";
 export const UserInputs = createContext();
 export const T1 = () =>{
    const {fly, setFly} = useContext(AppContext);
@@ -22,7 +24,9 @@ export const T1 = () =>{
    const [address, setAddress] = useState("21, Texas Street, USA");
    const [email, setEmail] = useState("example@example.com");
    const [weblink, setWeblink] = useState("yourname.com");
-   const [phoneNumber, setPhoneNumber] = useState("+234-816-173-6593")
+   const [phoneNumber, setPhoneNumber] = useState("+234-816-173-6593");
+   const[count, setCount] = useState(1);
+   let hoop = <Inputs></Inputs>
     return(
         <>
             <section className="w-full flex flex-row relative">
@@ -92,22 +96,9 @@ export const T1 = () =>{
                         <h1 className="text-blue-600 text-2xl font-semibold">Add Education</h1>
                     </header>
                     <div className="bg-white drop-shadow-md p-4 flex flex-col gap-3" >
-                        <div className="flex flex-col">
-                            <label htmlFor="degree">Degree:</label>
-                            <input type="text" placeholder="E.g BSc., B.Eng." className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
-                        </div>
-                        <div className="flex flex-col">
-                            <label htmlFor="school">School:</label>
-                            <input type="text" placeholder="Enter job" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
-                        </div>
-                        <div className="flex flex-col">
-                            <label htmlFor="start">Start:</label>
-                            <input type="text" placeholder="Enter your address" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
-                        </div>
-                        <div className="flex flex-col">
-                            <label htmlFor="finish">Finish:</label>
-                            <input type="text" placeholder="Enter your email" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
-                        </div>
+                        
+                          <Inputs></Inputs>
+                       
                         <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Education</button>
                     </div>
                     <header className="p-4 pt-24">
