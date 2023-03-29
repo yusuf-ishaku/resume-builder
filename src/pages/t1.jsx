@@ -13,7 +13,7 @@ import { RiLinkedinFill } from "react-icons/ri"
 import { DocSide1 } from "../components/t1pdf";
 
 import { AddEducation } from "../components/AddEducation";
-export const UserInputs = createContext();
+import { UserInputs } from "../App";
 export const T1 = () =>{
    const {fly, setFly} = useContext(AppContext);
    useEffect(()=>{
@@ -25,16 +25,16 @@ export const T1 = () =>{
    const [email, setEmail] = useState("example@example.com");
    const [weblink, setWeblink] = useState("yourname.com");
    const [phoneNumber, setPhoneNumber] = useState("+234-816-173-6593");
+   const[bio, setBio] = useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
 //    const[count, setCount] = useState(1);
   
     return(
         <>
             <section className="w-full flex flex-row relative">
                 <section className="w-[45%] bg-gray-500 h-fit p-6">
-                    <UserInputs.Provider value={{fName, title, address, email, weblink, phoneNumber}}>
+                    <UserInputs.Provider value={{fName, title, address, email, weblink, phoneNumber, bio}}>
                         <DocSide1></DocSide1>
                     </UserInputs.Provider>
-                    
                 </section>
                 <section className="w-[55%] pl-4 pb-5 h-auto">
                     <section className="fixed z-50 bg-white border-l-4 drop-shadow-md p-3 border-blue-600 flex flex-row">
@@ -87,13 +87,14 @@ export const T1 = () =>{
                         </div>
                         <div className="flex flex-col w-full">
                             <label htmlFor="bio">Your bio:</label>
-                            <textarea name="bio" placeholder="Bio" id="bio" cols="30" rows="10" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"></textarea>
+                            <textarea name="bio" placeholder="Bio" id="bio" cols="30" rows="10" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" onChange={(e)=>{setBio(e.target.value)}}></textarea>
                         </div>
                     </div>
                     <header className="p-4 pt-24">
                         <h1 className="text-blue-600 text-2xl font-semibold">Add Education</h1>
                     </header>
                     <div className="bg-white drop-shadow-md p-4 flex flex-col gap-3" >
+                        <AddEducation></AddEducation>
                         <button className="flex flex-row items-center justify-center bg-blue-600 text-white w-fit px-4 text-sm rounded-md h-10">Add Education</button>
                     </div>
                     <header className="p-4 pt-24">

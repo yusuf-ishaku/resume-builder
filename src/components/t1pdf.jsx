@@ -8,9 +8,9 @@ import { RiTwitterFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
 import { RiLinkedinFill } from "react-icons/ri";
 import { useContext } from "react";
-import { UserInputs } from "../pages/t1";
+import { UserInputs } from "../App";
 export const DocSide1 = () =>{
-    const {fName, title, address, email, weblink, phoneNumber} = useContext(UserInputs);
+    const {fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
 
     return (
         <section className="bg-white w-auto h-fit flex flex-row">
@@ -23,30 +23,30 @@ export const DocSide1 = () =>{
                                 <h2 className="text-gray-700 font-semibold text-md uppercase">{title}</h2>
                             </span>
                             <div className="flex flex-col gap-4 p-2 pl-4">
-                                <div className="flex flex-row  items-center text-blue-400">
+                                {address === "" ? <></>: <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
                                         <MdLocationOn></MdLocationOn>
                                     </span>
                                     <h1 className="text-white">{address}</h1>
-                                </div>
-                                <div className="flex flex-row  items-center text-blue-400">
+                                </div>}
+                                {phoneNumber === ""? <></>: <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
                                         <MdLocalPhone></MdLocalPhone>
                                     </span>
                                     <h1 className="text-white text-sm">{phoneNumber}</h1>
-                                </div>
-                                <div className="flex flex-row  items-center text-blue-400">
+                                </div>}
+                                {email ===""? <></>: <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
                                         <MdEmail></MdEmail>
                                     </span>
                                     <h1 className="text-white text-sm">{email}</h1>
-                                </div>
-                                <div className="flex flex-row  items-center text-blue-400">
+                                </div>}
+                                {weblink === ""? <></>: <div className="flex flex-row  items-center text-blue-400">
                                     <span className="w-9 mr-3 h-9 rounded-full flex flex-row items-center justify-center bg-white">
                                         <RxGlobe></RxGlobe>
                                     </span>
                                     <h1 className="text-white text-sm">{weblink}</h1>
-                                </div>
+                                </div>}
                             </div>
                             <hr className="mx-2 my-2"></hr>
                             <span className="block pt-2 px-1 pl-4">
@@ -153,7 +153,7 @@ export const DocSide1 = () =>{
                             </div>
                         </section>
                         <section className="bg-white p-4">
-                            <section>
+                            {bio ===""? <></>: <section>
                                 <header className="text-md mb-2 text-blue-400 uppercase font-semibold">
                                     <h1>
                                     About
@@ -161,10 +161,10 @@ export const DocSide1 = () =>{
                                 </header>
                                 <article>
                                     <p className="text-sm">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+                                    {bio}
                                     </p>
                                 </article>
-                            </section>
+                            </section>}
                             <hr className="bg-blue-400 my-3 mx-1 h-[0.1rem]" />
                             <section>
                                 <header className="text-md mb-2 text-blue-400 uppercase font-semibold">

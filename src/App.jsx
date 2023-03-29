@@ -18,6 +18,7 @@ import { T1 } from './pages/t1';
 import { createContext} from "react";
 
 export const AppContext = createContext();
+export const UserInputs = createContext();
 function App() {
   const [fly, setFly] = useState("w-full z-50 h-16 flex relative flex-row items-center px-32 bg-blue-100");
 
