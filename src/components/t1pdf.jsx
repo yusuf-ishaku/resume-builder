@@ -10,7 +10,7 @@ import { RiLinkedinFill } from "react-icons/ri";
 import { useContext } from "react";
 import { UserInputs } from "../App";
 export const DocSide1 = () =>{
-    const {educations, setEducations,fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
+    const {experiences, setExperiences, educations, setEducations,fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
     return (
         <section className="bg-white w-auto h-fit flex flex-row">
                         <section className="w-[45%] bg-blue-400 h-fit">
@@ -181,14 +181,14 @@ export const DocSide1 = () =>{
                                         </div>
                                         <div>
                                             <header className="text-gray-800 text-sm font-semibold mb-3">
-                                                <h1>{educations[0].startTime}-{educations[0].endTime}</h1>
+                                                <h1>{experiences[0].startTime}-{experiences[0].endTime}</h1>
                                             </header>
                                             <article>
                                                 <header>
-                                                    <h1 className="text-gray-800 text-sm font-semibold">{educations[0].degree}</h1>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">{experiences[0].company}</h1>
                                                 </header>
                                                 <p className="text-gray-600 text-xs font-medium">
-                                                {educations[0].school}
+                                                {experiences[0].title}
                                                 </p>
                                             </article>
                                         </div>
@@ -202,14 +202,14 @@ export const DocSide1 = () =>{
                                         </div>
                                         <div>
                                             <header className="text-gray-800 text-sm font-semibold mb-3">
-                                                <h1>{educations[1].startTime}-{educations[1].endTime}</h1>
+                                                <h1>{experiences[1].startTime}-{experiences[1].endTime}</h1>
                                             </header>
                                             <article>
                                                 <header>
-                                                    <h1 className="text-gray-800 text-sm font-semibold">{educations[1].degree}</h1>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">{experiences[1].company}</h1>
                                                 </header>
                                                 <p className="text-gray-600 text-xs font-medium">
-                                                {educations[1].school}
+                                                {experiences[1].title}
                                                 </p>
                                             </article>
                                         </div>
@@ -223,14 +223,14 @@ export const DocSide1 = () =>{
                                         </div>
                                         <div>
                                             <header className="text-gray-800 text-sm font-semibold mb-3">
-                                                <h1>{educations[2].startTime}-{educations[2].endTime}</h1>
+                                                <h1>{experiences[2].startTime}-{experiences[2].endTime}</h1>
                                             </header>
                                             <article>
                                                 <header>
-                                                    <h1 className="text-gray-800 text-sm font-semibold">{educations[2].degree}</h1>
+                                                    <h1 className="text-gray-800 text-sm font-semibold">{experiences[2].company}</h1>
                                                 </header>
                                                 <p className="text-gray-600 text-xs font-medium">
-                                                {educations[2].school}
+                                                {experiences[2].title}
                                                 </p>
                                             </article>
                                         </div>
