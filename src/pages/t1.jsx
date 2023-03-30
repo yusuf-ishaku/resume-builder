@@ -1,5 +1,5 @@
 import "../App.css";
-import { useContext,createContext, useEffect, useState } from "react";
+import { useContext,createContext, useEffect,useRef, useState, forwardRef } from "react";
 import { AppContext } from "../App";
 import Ajoy from "../assets/ajoy.jpg"; 
 import {MdLocationOn } from "react-icons/md";
@@ -10,8 +10,7 @@ import { MdFacebook} from "react-icons/md";
 import { RiTwitterFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
 import { RiLinkedinFill } from "react-icons/ri";
-// import { PDFDownloadLink } from "@react-pdf/renderer";
-import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
+import { jsPDF } from "jspdf";
 import { DocSide1 } from "../components/t1pdf";
 
 import { AddEducation } from "../components/AddEducation";
@@ -58,17 +57,40 @@ export const T1 = () =>{
         { skill: "SASS", range: 75}
     ])
    
+
+    const doc = new jsPDF();
+    const reportTemplateRef = useRef(null);
+
+	const handleGeneratePdf = () => {
+		const doc = new jsPDF({
+			format: 'a4',
+			unit: 'px',
+            precision: 16,
+            // unit: 'in',
+		});
+
+		// Adding the fonts.
+		// doc.setFont('Inter-Regular', 'normal');
+
+		doc.html(reportTemplateRef.current, {
+			async callback(doc) {
+				await doc.save(`${fName}`);
+			},
+		});
+	};
+
     return(
         <>
             <section className="w-full flex flex-row relative">
                 <section className="w-[45%] bg-gray-500 h-fit p-6">
-                    <UserInputs.Provider value={{skills, uploadedImage, setSkills,experiences, setExperiences, educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
-                        <Document>
-                            <Page>
-                                <DocSide1></DocSide1>
-                            </Page>    
-                        </Document>
+                    <div ref={reportTemplateRef}>
+                        <UserInputs.Provider value={{skills, uploadedImage, setSkills,experiences, setExperiences, educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
+                        
+                        <DocSide1></DocSide1>
+                                                    
                     </UserInputs.Provider>
+                    </div>
+                    
                 </section>
                 <section className="w-[55%] pl-4 pb-5 h-auto">
                     <section className="fixed z-50 bg-white border-l-4 drop-shadow-md p-3 border-blue-600 flex flex-row">
@@ -78,9 +100,8 @@ export const T1 = () =>{
                         
                         <button 
                         className="w-fit flex flex-row mx-4 items-center justify-center px-4 rounded-md text-white h-10 bg-blue-600"
-                       ><PDFDownloadLink document={<DocSide1></DocSide1>} fileName="somename.pdf">
-                       Download
-                     </PDFDownloadLink></button>
+                        onClick={handleGeneratePdf}
+                       >Download CV</button>
                        
                     </section>
                     <header className="p-4 pt-24">
