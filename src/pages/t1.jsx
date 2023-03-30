@@ -16,6 +16,7 @@ import { AddEducation } from "../components/AddEducation";
 import { UserInputs } from "../App";
 import { AddExperience } from "../components/addExperience";
 import { SkillRange } from "../components/skillRange";
+
 export const T1 = () =>{
    const {fly, setFly} = useContext(AppContext);
    useEffect(()=>{
@@ -32,6 +33,8 @@ export const T1 = () =>{
    const [count2, setCount2] = useState(1);
    const [range, setRange] = useState(50);
    const [count3, setCount3] = useState(1);
+   const [image, setImage] = useState("");
+   const [uploadedImage, setUploadedImage] = useState("")
    const[educations, setEducations] = useState([
     {degree: "Lorem ipsum", startTime: 2019, endTime: 2021, school: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, 
     { degree: "Lorem ipsum", startTime: 2019, endTime: 2021, school: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, 
@@ -56,7 +59,7 @@ export const T1 = () =>{
         <>
             <section className="w-full flex flex-row relative">
                 <section className="w-[45%] bg-gray-500 h-fit p-6">
-                    <UserInputs.Provider value={{skills, setSkills,experiences, setExperiences, educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
+                    <UserInputs.Provider value={{skills, uploadedImage, setSkills,experiences, setExperiences, educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
                         <DocSide1></DocSide1>
                     </UserInputs.Provider>
                 </section>
@@ -72,7 +75,29 @@ export const T1 = () =>{
                     <header className="p-4 pt-24">
                         <h1 className="text-blue-600 text-2xl font-semibold">Personal Info</h1>
                     </header>
+                    <section className="upimage flex flex-row items-center py-5 px-10 ">
+                        <div className="imagep">
+                           
+                            <input type="file" 
+                            onChange={(e)=>{
+                                setImage(e.target.value); 
+                                console.log(e.target.value); 
+                                let reader = new FileReader(); 
+                                reader.onload = ()=>{
+                                    setUploadedImage(reader.result);
+                                }
+                                reader.readAsDataURL(this.files[0])
+                                } 
+                            
+                            } />
+                        </div>
+                        <div className="buttons">
+                            <button className="bg-blue-600 p-2 mx-2 rounded-md text-white">Upload</button>
+                            <button className="bg-white border-2 border-blue-600 rounded-md p-2 mx-2 text-blue-600">Remove</button>
+                        </div>
+                    </section>                    
                     <div className="bg-white drop-shadow-md p-4 grid grid-cols-2 gap-3">
+                        
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Full Name:</label>
                             <input type="text" placeholder="Enter full name" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" onChange={(e)=>{

@@ -10,11 +10,11 @@ import { RiLinkedinFill } from "react-icons/ri";
 import { useContext } from "react";
 import { UserInputs } from "../App";
 export const DocSide1 = () =>{
-    const {skills, setSkills, experiences, setExperiences, educations, setEducations,fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
+    const {skills, setSkills, experiences, uploadedImage, setExperiences, educations, setEducations,fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
     return (
         <section className="bg-white w-auto h-fit flex flex-row">
                         <section className="w-[45%] bg-blue-400 h-fit">
-                            <img src={Ajoy} alt=""></img>
+                            <img src={uploadedImage} alt=""></img>
                             <span className="block pt-2 px-1 pl-2">
                                 <h1 className="text-white font-semibold text-xl uppercase">{fName}</h1>
                             </span>
