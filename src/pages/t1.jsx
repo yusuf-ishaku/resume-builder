@@ -11,7 +11,6 @@ import { MdFacebook} from "react-icons/md";
 import { RiTwitterFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
 import { RiLinkedinFill } from "react-icons/ri";
-import { jsPDF } from "jspdf";
 import { DocSide1 } from "../components/t1pdf";
 
 import ReactToPdf from "react-to-pdf";
@@ -64,29 +63,7 @@ export const T1 = () =>{
         { skill: "JS", range: 60},
         { skill: "JQuery", range: 43},
         { skill: "SASS", range: 75}
-    ])
-   
-
-    const doc = new jsPDF();
-    const reportTemplateRef = useRef(null);
-
-	const handleGeneratePdf = () => {
-		const doc = new jsPDF({
-			format: 'a4',
-			unit: 'px',
-            precision: 16,
-            // unit: 'in',
-		});
-
-		// Adding the fonts.
-		// doc.setFont('Inter-Regular', 'normal');
-
-		doc.html(reportTemplateRef.current, {
-			async callback(doc) {
-				await doc.save(`${fName}`);
-			},
-		});
-	};
+    ]);
 
     return(
         <>
