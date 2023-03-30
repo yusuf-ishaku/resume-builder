@@ -20,7 +20,7 @@ export const SkillRange = (props) =>{
                     placeholder="Enter job"
                     className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"
                     onChange={(e) => setSkills([...skills, skills[props.no].range = e.target.value])} />
-                {range}
+                {skills[props.no].range}
             </div>
         </>
     )
