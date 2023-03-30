@@ -9,7 +9,8 @@ import { RxGlobe } from "react-icons/rx";
 import { MdFacebook} from "react-icons/md";
 import { RiTwitterFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
-import { RiLinkedinFill } from "react-icons/ri"
+import { RiLinkedinFill } from "react-icons/ri";
+import ReactPDF from "@react-pdf/renderer";
 import { DocSide1 } from "../components/t1pdf";
 
 import { AddEducation } from "../components/AddEducation";
@@ -70,7 +71,9 @@ export const T1 = () =>{
                             <p >Fill all required fields and click download CV to get started. Where fields are not adequate, fill in with your most outstanding/most recent accomplishments.</p>
                         </div>
                         
-                        <button className="w-fit flex flex-row mx-4 items-center justify-center px-4 rounded-md text-white h-10 bg-blue-600">Download CV</button>
+                        <button 
+                        className="w-fit flex flex-row mx-4 items-center justify-center px-4 rounded-md text-white h-10 bg-blue-600"
+                        onClick={() =>{ ReactPDF.renderToFile(<DocSide1></DocSide1>)}}>Download CV</button>
                        
                     </section>
                     <header className="p-4 pt-24">
