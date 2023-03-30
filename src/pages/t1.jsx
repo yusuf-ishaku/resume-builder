@@ -30,6 +30,7 @@ export const T1 = () =>{
    const [phoneNumber, setPhoneNumber] = useState("+234-816-173-6593");
    const[bio, setBio] = useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua")
    const[count, setCount] = useState(1);
+   const [imValue, setImValue] = useState("")
    const [count2, setCount2] = useState(1);
    const [range, setRange] = useState(50);
    const [count3, setCount3] = useState(1);
@@ -86,8 +87,10 @@ export const T1 = () =>{
                             } />
                         </div>
                         <div className="buttons">
-                            <button className="bg-blue-600 p-2 mx-2 rounded-md text-white">Upload</button>
-                            <button className="bg-white border-2 border-blue-600 rounded-md p-2 mx-2 text-blue-600">Remove</button>
+                            
+                            <button
+                             className="bg-white border-2 border-blue-600 rounded-md p-2 mx-2 text-blue-600"
+                             onClick={() =>{setUploadedImage("")}}>Remove</button>
                         </div>
                     </section>                    
                     <div className="bg-white drop-shadow-md p-4 grid grid-cols-2 gap-3">

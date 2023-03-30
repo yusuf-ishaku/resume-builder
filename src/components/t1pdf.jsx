@@ -14,7 +14,7 @@ export const DocSide1 = () =>{
     return (
         <section className="bg-white w-auto h-fit flex flex-row">
                         <section className="w-[45%] bg-blue-400 h-fit">
-                            <img src={uploadedImage} alt=""></img>
+                            <img width={"300px"} height="300px" className="object-cover bg-white" src={uploadedImage} alt=""></img>
                             <span className="block pt-2 px-1 pl-2">
                                 <h1 className="text-white font-semibold text-xl uppercase">{fName}</h1>
                             </span>
