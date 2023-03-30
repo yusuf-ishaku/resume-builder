@@ -54,7 +54,7 @@ export const T1 = () =>{
         { skill: "JQuery", range: 43},
         { skill: "SASS", range: 75}
     ])
-  
+   
     return(
         <>
             <section className="w-full flex flex-row relative">
@@ -80,15 +80,9 @@ export const T1 = () =>{
                            
                             <input type="file" 
                             onChange={(e)=>{
-                                setImage(e.target.value); 
-                                console.log(e.target.value); 
-                                let reader = new FileReader(); 
-                                reader.onload = ()=>{
-                                    setUploadedImage(reader.result);
-                                }
-                                reader.readAsDataURL(this.files[0])
-                                } 
-                            
+                                console.log(e.target.files[0])
+                                setUploadedImage(URL.createObjectURL(e.target.files[0]))
+                            }
                             } />
                         </div>
                         <div className="buttons">
