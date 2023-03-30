@@ -12,7 +12,7 @@ import { UserInputs } from "../App";
 export const DocSide1 = () =>{
     const {skills, setSkills, experiences, uploadedImage, setExperiences, educations, setEducations,fName, title, address, email, weblink, phoneNumber, bio} = useContext(UserInputs);
     return (
-        <section className="bg-white w-auto h-fit flex flex-row">
+        <section className="bg-white w-full h-fit flex flex-row">
                         <section className="w-[45%] bg-blue-400 h-fit">
                             <img width={"300px"} height="300px" className="object-cover bg-white" src={uploadedImage} alt=""></img>
                             <span className="block pt-2 px-1 pl-2">

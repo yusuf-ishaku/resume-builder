@@ -1,4 +1,5 @@
 import "../App.css";
+import React from "react"
 import { useContext,createContext, useEffect,useRef, useState, forwardRef } from "react";
 import { AppContext } from "../App";
 import Ajoy from "../assets/ajoy.jpg"; 
@@ -12,6 +13,8 @@ import { RiYoutubeFill } from "react-icons/ri";
 import { RiLinkedinFill } from "react-icons/ri";
 import { jsPDF } from "jspdf";
 import { DocSide1 } from "../components/t1pdf";
+
+import ReactToPdf from "react-to-pdf";
 
 import { AddEducation } from "../components/AddEducation";
 import { UserInputs } from "../App";
@@ -36,7 +39,13 @@ export const T1 = () =>{
    const [range, setRange] = useState(50);
    const [count3, setCount3] = useState(1);
    const [image, setImage] = useState("");
-   const [uploadedImage, setUploadedImage] = useState("")
+   const [uploadedImage, setUploadedImage] = useState("");
+   const ref = React.createRef();
+    const options = {
+        orientation: 'portrait',
+        unit: 'in',
+        format: [15.6, 8.3]
+    };
    const[educations, setEducations] = useState([
     {degree: "Lorem ipsum", startTime: 2019, endTime: 2021, school: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, 
     { degree: "Lorem ipsum", startTime: 2019, endTime: 2021, school: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"}, 
@@ -83,7 +92,7 @@ export const T1 = () =>{
         <>
             <section className="w-full flex flex-row relative">
                 <section className="w-[45%] bg-gray-500 h-fit p-6">
-                    <div ref={reportTemplateRef}>
+                    <div ref={ref} className = "w-full">
                         <UserInputs.Provider value={{skills, uploadedImage, setSkills,experiences, setExperiences, educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
                         
                         <DocSide1></DocSide1>
@@ -98,11 +107,15 @@ export const T1 = () =>{
                             <p >Fill all required fields and click download CV to get started. Where fields are not adequate, fill in with your most outstanding/most recent accomplishments.</p>
                         </div>
                         
-                        <button 
+                        {/* <button 
                         className="w-fit flex flex-row mx-4 items-center justify-center px-4 rounded-md text-white h-10 bg-blue-600"
                         onClick={handleGeneratePdf}
-                       >Download CV</button>
-                       
+                       >Download CV</button> */}
+                        <ReactToPdf targetRef={ref} filename={`${fName}.pdf`} options={options} x={.1} y={.1} scale={1.4}>
+                            {({ toPdf }) => (
+                                <button className="w-fit flex flex-row mx-4 items-center justify-center px-4 rounded-md text-white h-10 bg-blue-600" onClick={toPdf}>Generate CV</button>
+                            )}
+                        </ReactToPdf>
                     </section>
                     <header className="p-4 pt-24">
                         <h1 className="text-blue-600 text-2xl font-semibold">Personal Info</h1>
