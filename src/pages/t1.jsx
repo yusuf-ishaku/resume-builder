@@ -10,7 +10,8 @@ import { MdFacebook} from "react-icons/md";
 import { RiTwitterFill } from "react-icons/ri";
 import { RiYoutubeFill } from "react-icons/ri";
 import { RiLinkedinFill } from "react-icons/ri";
-import ReactPDF from "@react-pdf/renderer";
+// import { PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFDownloadLink, Document, Page } from '@react-pdf/renderer';
 import { DocSide1 } from "../components/t1pdf";
 
 import { AddEducation } from "../components/AddEducation";
@@ -62,7 +63,11 @@ export const T1 = () =>{
             <section className="w-full flex flex-row relative">
                 <section className="w-[45%] bg-gray-500 h-fit p-6">
                     <UserInputs.Provider value={{skills, uploadedImage, setSkills,experiences, setExperiences, educations, setEducations, fName, title, address, email, weblink, phoneNumber, bio}}>
-                        <DocSide1></DocSide1>
+                        <Document>
+                            <Page>
+                                <DocSide1></DocSide1>
+                            </Page>    
+                        </Document>
                     </UserInputs.Provider>
                 </section>
                 <section className="w-[55%] pl-4 pb-5 h-auto">
@@ -73,7 +78,9 @@ export const T1 = () =>{
                         
                         <button 
                         className="w-fit flex flex-row mx-4 items-center justify-center px-4 rounded-md text-white h-10 bg-blue-600"
-                        onClick={() =>{ ReactPDF.renderToFile(<DocSide1></DocSide1>)}}>Download CV</button>
+                       ><PDFDownloadLink document={<DocSide1></DocSide1>} fileName="somename.pdf">
+                       Download
+                     </PDFDownloadLink></button>
                        
                     </section>
                     <header className="p-4 pt-24">
