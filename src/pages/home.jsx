@@ -38,7 +38,7 @@ export const Home = () =>{
             <div className="w-full ">
                 <header className="flex flex-row px-32">
                     <section className="w-1/2 px-4 flex flex-col  justify-center h-[90vh]">
-                        <div className="h-12 w-fit flex flex-row items-center p-2 bg-blue-100 rounded-full">
+                        <div className="h-12 mt-10 w-fit flex flex-row items-center p-2 bg-blue-100 rounded-full">
                             <div className="rounded-full flex items-center justify-center w-8 h-8 my-2 ml-2 bg-slate-300">
                                 <img src={Dollar} alt="" />
                             </div>
