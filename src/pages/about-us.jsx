@@ -11,7 +11,7 @@ export const About = () =>{
     const {fly, setFly} = useContext(AppContext);
     useEffect(() =>{
         setFly("w-full z-50 h-16 flex flex-row items-center text-white px-32 absolute bg-transparent")
-        console.log(fly)
+        // console.log(fly)
     })
     return(
         <>
