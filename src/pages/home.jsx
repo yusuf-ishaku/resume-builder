@@ -31,7 +31,7 @@ export const Home = () =>{
     const {fly, setFly} = useContext(AppContext)
     useEffect(() =>{
         setFly("w-full z-50 h-16 flex relative flex-row items-center px-32 bg-blue-100")
-        console.log(fly)
+        // console.log(fly)
     })
     return(
         <>
@@ -57,9 +57,9 @@ export const Home = () =>{
                             </p>
                         </article>
                         <div className="flex my-5">
-                            <button className="bg-blue-500 text-white p-2 rounded-lg px-6 text-lg mr-6">Choose Template</button>
+                            <Link to={"/templates"}><button className="bg-blue-500 text-white p-2 rounded-lg px-6 text-lg mr-6">Choose Template</button></Link>
                                 
-                            <button className="bg-blue-500 text-white p-2 px-6 rounded-lg border-gray-200 border-2 text-lg">Contact Us</button>
+                            <Link t><button className="bg-blue-500 text-white p-2 px-6 rounded-lg border-gray-200 border-2 text-lg">Contact Us</button></Link>
                         </div>
                     </section>
                     <figure className="w-1/2 flex items-center">
