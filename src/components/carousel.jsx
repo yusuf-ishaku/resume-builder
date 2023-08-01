@@ -30,7 +30,7 @@ export const Carousel = (props) =>{
           className = "mySwiper"
         >
           <SwiperSlide>
-            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 w-auto h-[450px]">
+            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 w-80 md:w-full h-[450px]">
                 <figure className="w-32 h-32 rounded-full mt-10">
                     <img className="object-fit rounded-full" src={props.image} alt="" />
                 </figure>
@@ -46,7 +46,7 @@ export const Carousel = (props) =>{
             </div>
           </SwiperSlide>
           <SwiperSlide> 
-            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 w-auto h-[450px]">
+            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 md:w-full w-80 h-[450px]">
                 <figure className="w-32 h-32 rounded-full mt-10">
                     <img className="object-fit rounded-full" src={props.image2} alt="" />
                 </figure>
@@ -62,7 +62,7 @@ export const Carousel = (props) =>{
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 w-auto h-[450px]">
+            <div className="flex flex-col p-4 items-center bg-white border-blue-200 rounded-xl border-1 md:w-full w-80 h-[450px]">
                 <figure className="w-32 h-32 rounded-full mt-10">
                     <img className="object-fit rounded-full" src={props.image3} alt="" />
                 </figure>
