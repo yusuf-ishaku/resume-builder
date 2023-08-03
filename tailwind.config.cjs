@@ -10,8 +10,9 @@ module.exports = {
     "./src/components/carousel.jsx",
     "./src/components/color-line.jsx",
     "./src/components/linkpaths.jsx",
-    "./src/pages/t1.jsx",
-    "./src/components/t1pdf.jsx"
+    "./src/pages/templatepage.jsx",
+    "./src/pages/templates.jsx",
+    "./src/components/Resume1.jsx"
   ],
   theme: {
     extend: {},

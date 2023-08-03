@@ -7,7 +7,8 @@ import { AddEducation } from "../components/AddEducation";
 import { UserInputs } from "../App";
 import { AddExperience } from "../components/addExperience";
 import { SkillRange } from "../components/skillRange";
-
+import ReactPDF, { PDFViewer } from "@react-pdf/renderer";
+import { Resume1 } from "../components/Resume1";
 export const TemplatePage = () =>{
     const params = useParams();
    const {fly, setFly} = useContext(AppContext);
@@ -57,8 +58,13 @@ export const TemplatePage = () =>{
 
     return(
         <>
-            <section className="w-full flex flex-row relative">
-                <section className="w-[55%] p-4 pb-5 h-auto bg-white drop-shadow-lg">
+            <section className="w-full flex flex-row">
+                <section className="w-[50vw]">
+                   <PDFViewer className="w-[50vw] h-full" showToolbar={false}>
+                        <Resume1></Resume1>
+                   </PDFViewer>
+                </section>
+                <section className="w-[50vw] p-4 pb-5 bg-white drop-shadow-lg">
                     <header>
                         <h2 className="text-blue-600 font-medium text-2xl">Personal Information</h2>
                     </header>
