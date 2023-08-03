@@ -22,6 +22,7 @@ export const Resume1 = () =>{
             <View style={styles.section}>
                 <Text>Section 2</Text>
             </View> 
+            
         </Page>
     </Document>
     )
