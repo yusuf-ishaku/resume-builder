@@ -160,16 +160,16 @@ export const Home = () =>{
                             </div>
                             <div className="h-[18%] w-full px-4 md:py-0 py-4 flex flex-row items-center justify-between">
                                 <button className="stylin border-blue-600 p-2 w-auto px-2 text-white text-xs lg:text-lg rounded-3xl bg-blue-600">See template</button>
-                                <Link to="/template1"><button className="stylin w-auto border-blue-600 border-2 border-3 text-xs lg:text-lg p-2 px-2 rounded-3xl bg-white">Use Template</button></Link>
+                                <Link to="/template/1"><button className="stylin w-auto border-blue-600 border-2 border-3 text-xs lg:text-lg p-2 px-2 rounded-3xl bg-white">Use Template</button></Link>
                             </div>
                         </div>
                         <div className="flex flex-col w-full st h-[500px] md:mb-0 mb-4 md:w-[30%] border-white drop-shadow-xl bg-white  border-6">
                             <div className="bg-red-900 cursor-pointer h-[82%]">
                                
                             </div>
-                            <div className="h-[18%] px-4 flex flex-row items-center justify-between">
-                                <button className="stylin border-blue-600 p-2 px-2 text-white text-xs lg:text-lg rounded-3xl bg-blue-600">See template</button>
-                                <button className="stylin border-blue-600 border-2 border-3 text-xs lg:text-lg p-2 px-4 rounded-3xl bg-white">Use Template</button>
+                            <div className="h-[18%] w-full px-4 md:py-0 py-4 flex flex-row items-center justify-between">
+                                <button className="stylin border-blue-600 w-auto p-2 px-2 text-white text-xs lg:text-lg rounded-3xl bg-blue-600">See template</button>
+                                <button className="stylin border-blue-600 border-2 border-3 text-xs lg:text-lg p-2 px-2 rounded-3xl bg-white">Use Template</button>
                             </div>
                         </div>
                         <div className="flex flex-col w-full st h-[500px] md:w-[30%] border-white drop-shadow-xl bg-white border-6">
@@ -178,12 +178,12 @@ export const Home = () =>{
                             </div>
                             <div className="h-[18%] px-4 flex flex-row items-center justify-between">
                                 <button className="stylin border-blue-600 p-2 px-2 text-white text-xs lg:text-lg rounded-3xl bg-blue-600">See template</button>
-                                <button className="stylin border-blue-600 border-2 border-3 text-xs lg:text-lg p-2 px-4 rounded-3xl bg-white">Use Template</button>
+                                <button className="stylin border-blue-600 border-2 border-3 text-xs lg:text-lg p-2 px-2 rounded-3xl bg-white">Use Template</button>
                             </div>
                         </div>
                     </section>
                 </section>
-                <section className="w-full h-auto mt-24 mb-10 lg:mb-60">
+                <section className="w-full h-auto mt-24 mb-10 lg:mb-30">
                     <header className="text-center flex flex-col items-center">
                         <ColorLine></ColorLine>
                         <h2 className="text-blue-900 text-4xl font-extrabold">Our Main Features</h2>
@@ -202,7 +202,7 @@ export const Home = () =>{
                         <Desc img={F6} header="Fast Easy CV and Resume Formatting" text="Lorem ipsum dolor sit amet, consecte adipiscing elit. Nulla neque quam, maxim us ut accumsan ut, posuere sit Lorem ipsum adipiscing elit."></Desc>
                     </section>
                 </section>
-                <section className="block md:px-10 lg:px-32 px-4 mb-10 lg:mb-80 py-10 lg:py-32 h-fit">
+                <section className="block md:px-10 lg:px-32 px-4 mb-10 lg:mb-40 py-10 lg:py-2 h-fit">
                     <header className="text-center flex flex-col items-center">
                         <ColorLine></ColorLine>
                         <h2 className="text-blue-900 text-4xl font-extrabold">Your Success, Our inspiration</h2>

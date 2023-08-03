@@ -29,6 +29,9 @@
     list-style-type: image;
     list-style-image: url("../src/assets/check.png");
   }
+  a.active{
+    color:red;
+  }
   .hei{
     background-image: url("./src/assets/bread.jpg");
   }
