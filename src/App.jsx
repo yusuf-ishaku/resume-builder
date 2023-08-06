@@ -21,24 +21,26 @@ export const AppContext = createContext();
 export const UserInputs = createContext();
 function App() {
   const [fly, setFly] = useState("w-full z-50 h-16 flex relative flex-row items-center px-4 md:px-32 bg-blue-100");
-
+  const [firstName, setFirstName ] = useState("")
   return (
     <div className="App">
       <AppContext.Provider value={{fly, setFly}}>
-        <Router>
-          <Navbar></Navbar>
-          <Routes>
-            <Route path="/" element={<Home/>}></Route>
-            <Route path='/contact' element={<Contact></Contact>}></Route>
-            <Route path='/pricing' element={<Pricing></Pricing>}></Route>
-            <Route path='/templates' element={<Templates></Templates>}></Route>
-            <Route path='/about' element={<About></About>}></Route>
-            <Route path='/template/:templateId'element={<TemplatePage></TemplatePage>}></Route>
-            <Route></Route>
-            <Route></Route>
-            <Route></Route>
-          </Routes>
-        </Router>
+        <UserInputs.Provider value ={{firstName, setFirstName}}>
+          <Router>
+            <Navbar></Navbar>
+            <Routes>
+              <Route path="/" element={<Home/>}></Route>
+              <Route path='/contact' element={<Contact></Contact>}></Route>
+              <Route path='/pricing' element={<Pricing></Pricing>}></Route>
+              <Route path='/templates' element={<Templates></Templates>}></Route>
+              <Route path='/about' element={<About></About>}></Route>
+              <Route path='/template/:templateId'element={<TemplatePage></TemplatePage>}></Route>
+              <Route></Route>
+              <Route></Route>
+              <Route></Route>
+            </Routes>
+          </Router>
+        </UserInputs.Provider>
       </AppContext.Provider>
     </div>
   )

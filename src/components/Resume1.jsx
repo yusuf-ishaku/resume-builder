@@ -1,4 +1,5 @@
 import { Page, View, Text, Document, StyleSheet} from "@react-pdf/renderer";
+import { useState } from "react";
 
 const styles = StyleSheet.create({
     page: {
@@ -12,17 +13,17 @@ const styles = StyleSheet.create({
         flexGrow: 1
     }
 })
-export const Resume1 = () =>{
+export const Resume1 = (props) =>{
+    const [firstName, setFirstName ] = useState(props.firstName);
     return(
     <Document>
         <Page size={'A4'} style={styles.page}>
             <View style={styles.section}>
-                <Text>Section 1</Text>
+                <Text>{props.firstName}</Text>
             </View>
             <View style={styles.section}>
                 <Text>Section 2</Text>
-            </View> 
-            
+            </View>
         </Page>
     </Document>
     )
