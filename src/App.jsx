@@ -21,12 +21,10 @@ export const AppContext = createContext();
 export const UserInputs = createContext();
 function App() {
   const [fly, setFly] = useState("w-full z-50 h-16 flex relative flex-row items-center px-4 md:px-32 bg-blue-100");
-  const [firstName, setFirstName ] = useState("");
-  const [role, setRole] = useState("")
+  const [user, setUser ] = useState({});
   return (
     <div className="App">
       <AppContext.Provider value={{fly, setFly}}>
-        <UserInputs.Provider value ={{firstName, setFirstName, role, setRole}}>
           <Router>
             <Navbar></Navbar>
             <Routes>
@@ -41,7 +39,6 @@ function App() {
               <Route></Route>
             </Routes>
           </Router>
-        </UserInputs.Provider>
       </AppContext.Provider>
     </div>
   )

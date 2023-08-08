@@ -1,5 +1,6 @@
 import { Page, View, Text, Document, StyleSheet, Image} from "@react-pdf/renderer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+// import { UserInputs } from "../App";
 import Ajoy from "../assets/ajoy.jpg"
 const styles = StyleSheet.create({
     page: {
@@ -10,35 +11,44 @@ const styles = StyleSheet.create({
     section: {       
         flexGrow: 1,
         width: '40%',
-        backgroundColor: 'blue',
+        // backgroundColor: 'blue',
         // backgroundColor: 'red'
     },
   
 })
 export const Resume1 = (props) =>{
-    const [firstName, setFirstName ] = useState(props.firstName);
+    // const { user } = useContext(UserInputs);
+    const [userValue, setUserValue] = useState(props.user);
+    useEffect(() =>{
+        console.log(props.user);
+        setUserValue(props.user)
+    },[])
+   
     return(
     <Document>
         <Page size={'A4'} style={styles.page}>
-            <View style={styles.section}>
+            <View style={{...styles.section, backgroundColor: 'blue'}}>
                 <Image
                 src={Ajoy}>
 
                 </Image>
                 <View style={{padding: 10}}>
                     <Text style={{color: 'white', textTransform: 'uppercase'}}
-                    >{props.firstName !== '' ? 
-                    props.firstName : 
+                    >{userValue.firstName? 
+                        userValue.firstName
+                    : 
                     "Stephen Colbert"
                     }</Text>
-                    <Text style={{marginVertical: 4,fontWeight: 'light', color: 'white', fontSize: '18px', textTransform: 'capitalize'}}>
-                        {props.role !== '' ? 
-                        props.role : 
-                        'Developer advocate'
-                        } 
+                    <Text style={{marginVertical: 4,fontWeight: 'light', color: 'black', fontSize: '18px', textTransform: 'capitalize'}}>
+                     
                     </Text>
-                    <View>
-
+                    <View style={{marginTop: 5}}>
+                        <Text style={{color: 'white'}}>
+                         
+                        </Text>
+                        <Text style={{color: 'white', marginVertical: 10}}>
+                          
+                        </Text>
                     </View>
                     <View>
 
@@ -51,7 +61,7 @@ export const Resume1 = (props) =>{
                     </View>
                 </View>
             </View>
-            <View style={{...styles.section, width: '60%', backgroundColor: 'blue', padding: 5}}>
+            <View style={{...styles.section, width: '60%',padding: 5}}>
                 <Text>Section 2</Text>
             </View>
         </Page>
