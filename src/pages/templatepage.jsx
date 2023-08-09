@@ -4,6 +4,8 @@ import { useContext, useEffect,  } from "react";
 import { AppContext, UserInputs } from "../App";
 import { useParams } from "react-router-dom";
 import ReactPDF, { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
+import { Provider } from "react-redux";
+import { store } from "../store/store";
 import { Resume1 } from "../components/Resume1";
 export const TemplatePage = () =>{
     const params = useParams();
@@ -18,22 +20,24 @@ export const TemplatePage = () =>{
             <section className="w-full flex flex-row fixed">
                
                     <section className="w-[50vw] h-[100vh] bg-gray-900 flex flex-row items-center justify-center">
-                        <PDFViewer width={'80%'} height={'90%'} showToolbar={false}>
-                            <Resume1 ></Resume1>
+                        
+                        <PDFViewer width={'80%'} height={'90%'} showToolbar={false}> 
+                            <Provider store={store}>  
+                                <Resume1></Resume1>
+                            </Provider>
                         </PDFViewer>
+                       
                     </section>
                
                
                 <section className="w-[50vw] p-4 pb-5 bg-white drop-shadow-lg">
                     <header>
                         <h2 className="text-blue-600 font-medium text-2xl">Personal Information</h2>
-                       
-                            <PDFDownloadLink document={<Resume1 user = {user}></Resume1>} fileName={`${user.firstName}.pdf`}>
-                            {({ blob, url, loading, error }) =>
-                                loading ? 'Loading document...' : 'Download now!'
-                            }
-                            </PDFDownloadLink>
-                        
+                        {/* <PDFDownloadLink document={<Provider store={store}><Resume1></Resume1></Provider>} fileName={`user.pdf`}>
+                        {({ blob, url, loading, error }) =>
+                            loading ? 'Loading document...' : 'Download now!'
+                        }
+                        </PDFDownloadLink> */}
                     </header>
                     <div className="mt-5 grid grid-cols-2 gap-3">
                         <div className="flex flex-col">

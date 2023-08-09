@@ -1,6 +1,6 @@
 import { Page, View, Text, Document, StyleSheet, Image} from "@react-pdf/renderer";
-import { useEffect, useState } from "react";
-// import { UserInputs } from "../App";
+
+import { useSelector }  from "react-redux";
 import Ajoy from "../assets/ajoy.jpg"
 const styles = StyleSheet.create({
     page: {
@@ -16,14 +16,11 @@ const styles = StyleSheet.create({
     },
   
 })
-export const Resume1 = (props) =>{
+export const Resume1 = () =>{
     // const { user } = useContext(UserInputs);
-    const [userValue, setUserValue] = useState(props.user);
-    useEffect(() =>{
-        console.log(props.user);
-        setUserValue(props.user)
-    },[])
-   
+    // const user = useSelector((state) => state.user);
+    // let user = useSelector(state => state.users);
+    // console.log(user)
     return(
     <Document>
         <Page size={'A4'} style={styles.page}>
@@ -34,11 +31,9 @@ export const Resume1 = (props) =>{
                 </Image>
                 <View style={{padding: 10}}>
                     <Text style={{color: 'white', textTransform: 'uppercase'}}
-                    >{userValue.firstName? 
-                        userValue.firstName
-                    : 
-                    "Stephen Colbert"
-                    }</Text>
+                    >
+
+                    </Text>
                     <Text style={{marginVertical: 4,fontWeight: 'light', color: 'black', fontSize: '18px', textTransform: 'capitalize'}}>
                      
                     </Text>
