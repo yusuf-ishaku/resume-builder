@@ -7,7 +7,7 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         updateUser: (state, action) =>{
-            console.log(action.payload);
+            state.age = action.payload;
         }
     }
 });

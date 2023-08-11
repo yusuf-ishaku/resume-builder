@@ -2,11 +2,12 @@ import { Page, View, Text, Document, StyleSheet, Image} from "@react-pdf/rendere
 
 import { useSelector }  from "react-redux";
 import Ajoy from "../assets/ajoy.jpg"
+import { useEffect } from "react";
 const styles = StyleSheet.create({
     page: {
         flexDirection: 'row',
         // backgroundColor: '#E4E4E4',
-        width: '50vw',
+        width: '100%',
     },
     section: {       
         flexGrow: 1,
@@ -16,11 +17,14 @@ const styles = StyleSheet.create({
     },
   
 })
-export const Resume1 = () =>{
+export const Resume1 = ({user}) =>{
     // const { user } = useContext(UserInputs);
     // const user = useSelector((state) => state.user);
-    // let user = useSelector(state => state.users);
-    // console.log(user)
+    // let user = useSelector(state => state.user);
+    console.log(user);
+    useEffect(() =>{
+        console.log('ready')
+    })
     return(
     <Document>
         <Page size={'A4'} style={styles.page}>
@@ -32,7 +36,7 @@ export const Resume1 = () =>{
                 <View style={{padding: 10}}>
                     <Text style={{color: 'white', textTransform: 'uppercase'}}
                     >
-
+                        {user}
                     </Text>
                     <Text style={{marginVertical: 4,fontWeight: 'light', color: 'black', fontSize: '18px', textTransform: 'capitalize'}}>
                      

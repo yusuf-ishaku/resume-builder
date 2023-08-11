@@ -16,6 +16,7 @@ import { Templates } from './pages/templates';
 import { About } from './pages/about-us';
 import { TemplatePage } from './pages/templatepage';
 import { createContext} from "react";
+import { Resume1 } from './components/Resume1';
 
 export const AppContext = createContext();
 export const UserInputs = createContext();
@@ -33,10 +34,9 @@ function App() {
               <Route path='/pricing' element={<Pricing></Pricing>}></Route>
               <Route path='/templates' element={<Templates></Templates>}></Route>
               <Route path='/about' element={<About></About>}></Route>
-              <Route path='/template/:templateId'element={<TemplatePage></TemplatePage>}></Route>
-              <Route></Route>
-              <Route></Route>
-              <Route></Route>
+              <Route path='/template/:templateId'element={<TemplatePage></TemplatePage>} >
+                
+              </Route>
             </Routes>
           </Router>
       </AppContext.Provider>
