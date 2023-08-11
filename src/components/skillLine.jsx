@@ -7,18 +7,18 @@ import {BsTelephone} from "react-icons/bs";
 export const SkillLine = (props) =>{
     return (
         <>
-        <div className="w-full">
-            <span>
+        <div className="w-30 h-30 bg-white">
+           
                 {
-                    props.prop.type === "address" && <CiLocationOn></CiLocationOn>
+                    props.address && <CiLocationOn color='white'></CiLocationOn>
                     ||
-                    props.prop.tel && <BsTelephone></BsTelephone>
+                    props.tel && <BsTelephone color='white'></BsTelephone>
                     || 
-                    props.prop.mail && <CiMail></CiMail>
+                    props.mail && <CiMail color='rgb(96 165 250)'></CiMail>
                     ||
-                    props.prop.web &&  <CiGlobe></CiGlobe>
+                    props.web &&  <CiGlobe color='rgb(96 165 250)'></CiGlobe>
                 }
-            </span>
+          
         </div>
         </>
     )

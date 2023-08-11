@@ -19,17 +19,9 @@ export const TemplatePage = () =>{
             value,
             target
         }
-        
         dispatch(updateUser(packet)) 
-
     }
-    let passToUserArray = (value, target)=>{
-        let packet = {
-            value, 
-            target
-        }
-        dispatch(updateUserArray(packet))
-    }
+   
     useEffect(()=>{
         setFly("hidden w-full z-50 h-16 flex flex-row items-center text-white px-32 absolute bg-transparent");
         // console.log(params.templateId);
@@ -46,14 +38,14 @@ export const TemplatePage = () =>{
                     </section>
                
                
-                <section className="w-[50vw] p-4 pb-5 bg-white drop-shadow-lg">
+                <section className="w-[50vw] p-4 pb-5 bg-white drop-shadow-lg ">
                     <header>
                         <h2 className="text-blue-600 font-medium text-2xl">Personal Information</h2>
-                        {/* <PDFDownloadLink document={<Provider store={store}><Resume1></Resume1></Provider>} fileName={`user.pdf`}>
+                        <PDFDownloadLink document={<Resume1 user={user}></Resume1>} fileName={`user.pdf`}>
                         {({ blob, url, loading, error }) =>
                             loading ? 'Loading document...' : 'Download now!'
                         }
-                        </PDFDownloadLink> */}
+                        </PDFDownloadLink>
                     </header>
                     <div className="mt-5 grid grid-cols-2 gap-3">
                         <div className="flex flex-col">
@@ -84,17 +76,31 @@ export const TemplatePage = () =>{
                             placeholder="96b California Street" 
                             className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"
                             onChange={(e) =>{
-                                passToUserArray(e.target.value, "address")
+                                passToUser(e.target.value, "address")
                             }}
                             />
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Your Email:</label>
-                            <input type="text" placeholder="yourmail@gmail.com" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                            <input 
+                            type="text" 
+                            placeholder="yourmail@gmail.com" 
+                            className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"
+                            onChange={(e) =>{
+                                passToUser(e.target.value, "email")
+                            }}
+                            />
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Website Link:</label>
-                            <input type="text" placeholder="http://example.com" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" />
+                            <input 
+                            type="text" 
+                            placeholder="http://example.com" 
+                            className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" 
+                            onChange={(e) =>{
+                                passToUser(e.target.value, "web")
+                            }}
+                            />
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="fullname">Phone Number:</label>
@@ -102,12 +108,25 @@ export const TemplatePage = () =>{
                             type="text" 
                             placeholder="e.g. +234-816-173-6593" 
                             className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"
+                            onChange={(e) =>{
+                                passToUser(e.target.value, "tel")
+                            }}
                             />
                         </div>
                     </div>
                     <div className="flex flex-col w-full">
                         <label htmlFor="bio">Your bio:</label>
-                        <textarea name="bio" placeholder="Bio" id="bio" cols="30" rows="10" className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"></textarea>
+                        <textarea 
+                        name="bio" 
+                        placeholder="Bio" 
+                        id="bio" 
+                        cols="30" 
+                        rows="10" 
+                        className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"
+                        onChange={(e) =>{
+                            passToUser(e.target.value, "bio")
+                        }}
+                        ></textarea>
                     </div>
                 </section>
             </section>

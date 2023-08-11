@@ -1,5 +1,12 @@
 import { Page, View, Text, Document, StyleSheet, Image} from "@react-pdf/renderer";
 
+import { CiLocationOn } from 'react-icons/ci';
+import { CiMail } from "react-icons/ci";
+import { CiGlobe } from "react-icons/ci";
+import {BsTelephone} from "react-icons/bs";
+
+// import { SkillLine } from "./skillLine";
+
 import { useSelector }  from "react-redux";
 import Ajoy from "../assets/ajoy.jpg"
 import { useEffect } from "react";
@@ -29,7 +36,7 @@ export const Resume1 = ({user}) =>{
     return(
     <Document>
         <Page size={'A4'} style={styles.page}>
-            <View style={{...styles.section, backgroundColor: 'blue'}}>
+            <View style={{...styles.section, backgroundColor: 'rgb(96 165 250)'}}>
                 <Image
                 src={Ajoy}>
 
@@ -43,11 +50,47 @@ export const Resume1 = ({user}) =>{
                      {user.role ? user.role : "Front End Developer"}
                     </Text>
                     <View style={{marginTop: 10}}>
-                        {user.infos && user.infos.map((x,y) =>{
-                            return (
-                                <SkillLine prop ={x.type}></SkillLine>
-                            )
-                        })}
+                        <span>
+                            <SkillLine address={true}></SkillLine>
+                            {user.address ?   
+                            <Text style={{marginVertical: 4,fontWeight: 'light', color: 'white', fontSize: '18px', textTransform: 'capitalize'}}>
+                                {user.address}
+                            </Text> 
+                            : 
+                            <Text style={{marginVertical: 4,fontWeight: 'light', color: 'white', fontSize: '18px', textTransform: 'capitalize'}}>
+                                99 Worthington's lane
+                            </Text>
+                        }
+                        </span>
+                       
+                        {user.tel ?   
+                            <Text style={{marginVertical: 4,fontWeight: 'light', color: 'white', fontSize: '18px', textTransform: 'capitalize'}}>
+                                {user.tel}
+                            </Text> 
+                            : 
+                            <Text style={{marginVertical: 4,fontWeight: 'light', color: 'white', fontSize: '18px', textTransform: 'capitalize'}}>
+                               +123 456 789 01
+                            </Text>
+                        }
+                        {user.email ?   
+                            <Text style={{marginVertical: 4,fontWeight: 'light', color: 'white', fontSize: '18px', textTransform: 'capitalize'}}>
+                                {user.email}
+                            </Text> 
+                            : 
+                            <Text style={{marginVertical: 4,fontWeight: 'light', color: 'white', fontSize: '18px', textTransform: 'capitalize'}}>
+                               example@example.com
+                            </Text>
+                        }
+                        {user.web ?   
+                            <Text style={{marginVertical: 4,fontWeight: 'light', color: 'white', fontSize: '18px', textTransform: 'capitalize'}}>
+                                
+                                {user.web}
+                            </Text> 
+                            : 
+                            <Text style={{marginVertical: 4,fontWeight: 'light', color: 'white', fontSize: '18px', textTransform: 'lowercase'}}>
+                               www.exampledomain.com
+                            </Text>
+                        }
                     </View>
                     <View>
 
