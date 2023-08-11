@@ -7,13 +7,29 @@ import ReactPDF, { PDFDownloadLink, PDFViewer } from "@react-pdf/renderer";
 import {  useSelector, useDispatch } from "react-redux";
 import { store } from "../store/store";
 import { Resume1 } from "../components/Resume1";
-import { updateUser } from "../store/slices/userSlice";
+import { updateUser, updateUserArray } from "../store/slices/userSlice";
 export const TemplatePage = () =>{
     const params = useParams();
     const {fly, setFly} = useContext(AppContext);
    const user = useSelector((state) => state.user);
    let dispatch = useDispatch();
-   console.log(user)
+//    console.log(user)
+    let passToUser = (value, target) =>{
+        let packet = {
+            value,
+            target
+        }
+        
+        dispatch(updateUser(packet)) 
+
+    }
+    let passToUserArray = (value, target)=>{
+        let packet = {
+            value, 
+            target
+        }
+        dispatch(updateUserArray(packet))
+    }
     useEffect(()=>{
         setFly("hidden w-full z-50 h-16 flex flex-row items-center text-white px-32 absolute bg-transparent");
         // console.log(params.templateId);
@@ -22,10 +38,10 @@ export const TemplatePage = () =>{
         <>
             <section className="w-full flex flex-row fixed">
                
-                    <section className="w-[50vw] h-[100vh] bg-gray-900 ">
+                    <section className="w-[50vw] h-[100vh] bg-gray-900 flex items-center justify-center ">
                         
-                        <PDFViewer width={"100%"} height={"100%"} showToolbar={false}> 
-                            <Resume1 user = {user.age}></Resume1>
+                        <PDFViewer width={"80%"} height={"100%"} showToolbar={false}> 
+                            <Resume1 user = {user}></Resume1>
                         </PDFViewer>
                     </section>
                
@@ -45,7 +61,9 @@ export const TemplatePage = () =>{
                             <input type="text"
                              placeholder="John Doe" 
                              className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md" 
-                             onChange={(e) => dispatch(updateUser(e.target.value)) }
+                             onChange={(e) => {
+                               passToUser(e.target.value, "name");
+                            }}
                             />
                         </div>
                         <div className="flex flex-col">
@@ -54,6 +72,9 @@ export const TemplatePage = () =>{
                             type="text" 
                             placeholder="e.g. Software developer" 
                             className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"
+                            onChange={(e) =>{
+                                passToUser(e.target.value, "role");
+                            }}
                             />
                         </div>
                         <div className="flex flex-col">
@@ -62,6 +83,9 @@ export const TemplatePage = () =>{
                             type="text" 
                             placeholder="96b California Street" 
                             className="p-2 placeholder-gray-400 border-[1px] border-gray-400 rounded-md"
+                            onChange={(e) =>{
+                                passToUserArray(e.target.value, "address")
+                            }}
                             />
                         </div>
                         <div className="flex flex-col">

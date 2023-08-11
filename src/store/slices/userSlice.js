@@ -1,17 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-    name: "",
+  
 }
 const userSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
         updateUser: (state, action) =>{
-            state.age = action.payload;
+            state[action.payload.target] = action.payload.value;
+        },
+        updateUserArray(state, action){
+            let value = action.payload.value;
+            let type = action.payload.target;
+           if(state.infos){
+            state.infos = [...state.infos, {value, type}]
+           }else{
+            state.infos = [{value, type}]
+           }
         }
     }
 });
 
-export const {updateUser} = userSlice.actions;
+export const {updateUser, updateUserArray} = userSlice.actions;
 
 export default userSlice.reducer

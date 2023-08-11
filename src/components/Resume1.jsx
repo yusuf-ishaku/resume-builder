@@ -3,6 +3,7 @@ import { Page, View, Text, Document, StyleSheet, Image} from "@react-pdf/rendere
 import { useSelector }  from "react-redux";
 import Ajoy from "../assets/ajoy.jpg"
 import { useEffect } from "react";
+import { SkillLine } from "./skillLine";
 const styles = StyleSheet.create({
     page: {
         flexDirection: 'row',
@@ -36,18 +37,17 @@ export const Resume1 = ({user}) =>{
                 <View style={{padding: 10}}>
                     <Text style={{color: 'white', textTransform: 'uppercase'}}
                     >
-                        {user}
+                        {user.name ? user.name : "Stephen Colbert"}
                     </Text>
                     <Text style={{marginVertical: 4,fontWeight: 'light', color: 'black', fontSize: '18px', textTransform: 'capitalize'}}>
-                     
+                     {user.role ? user.role : "Front End Developer"}
                     </Text>
-                    <View style={{marginTop: 5}}>
-                        <Text style={{color: 'white'}}>
-                         
-                        </Text>
-                        <Text style={{color: 'white', marginVertical: 10}}>
-                          
-                        </Text>
+                    <View style={{marginTop: 10}}>
+                        {user.infos && user.infos.map((x,y) =>{
+                            return (
+                                <SkillLine prop ={x.type}></SkillLine>
+                            )
+                        })}
                     </View>
                     <View>
 

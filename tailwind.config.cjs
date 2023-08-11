@@ -3,7 +3,6 @@ module.exports = {
   content: [
     "./index.html",
     "./src/App.jsx",
-    "./src/components/educationbar.jsx",
     "./src/pages/home.jsx",
     "./src/components/navbar.jsx",
     "./src/components/desc.jsx",
@@ -12,7 +11,8 @@ module.exports = {
     "./src/components/linkpaths.jsx",
     "./src/pages/templatepage.jsx",
     "./src/pages/templates.jsx",
-    "./src/components/Resume1.jsx"
+    "./src/components/Resume1.jsx",
+    "./src/components/skillLine.jsx"
   ],
   theme: {
     extend: {},

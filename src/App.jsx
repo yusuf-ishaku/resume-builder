@@ -4,7 +4,7 @@ import React from 'react';
 import { RxCaretDown } from "react-icons/rx";
 import { RxCaretUp } from "react-icons/rx";
 import './App.css'
-import { EducationBar } from './components/educationbar';
+// import { EducationBar } from './components/educationbar';
 import {GrAddCircle} from "react-icons/gr"
 import { IconContext } from 'react-icons';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
